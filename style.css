@@ -1,0 +1,420 @@
+/*
+Theme Name: Portal Crea
+Theme URI: https://si.clan.gov.co/
+Author: Equipo Información CREA
+Author URI: https://si.clan.gov.co/
+Description: Portal de contenidos CREA
+Version: 1.7
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: blog, two-columns, accessibility-ready
+Text Domain: PortalCrea
+*/
+
+
+/*********** Fuentes **********/
+
+@import url('https://fonts.googleapis.com/css?family=Amatica+SC:700|Montserrat');
+
+@font-face {
+      font-family: "Local Amatica SC Bold";
+      src: url("fonts/AMATICSC-BOLD.TTF");
+}   
+@font-face {
+      font-family: "Local Amatica SC Regular";
+      src: url("fonts/AMATICSC-REGULAR.TTF");
+} 
+@font-face {
+      font-family: "Vincent Regular";
+      src: url("fonts/VINCENT-REGULAR.OTF");
+}  
+                            
+
+
+/********** Generales ***********/
+body{
+      margin: 0 !important;
+      /*padding: 90px 0 0 0;*/ /*para que baje el Contenido en el inicio*/
+} 
+body span.ancla{
+      height: 0px;
+}
+
+h1,h2,h3,h4,h5,h6, .titulo{
+      font-family: 'Amatica SC', cursive !important;     
+      letter-spacing: 1px; 
+      line-height: 1.1;
+      /*font-family: "Vincent Regular", cursive;*/
+}
+p{
+      font-family: 'Montserrat', sans-serif;
+      font-size: medium;
+      letter-spacing: 1px; 
+      line-height: 1.42857143;     
+      text-align: justify;
+}
+.text-center {
+    text-align: center;
+} 
+
+/*********** Menu y Header *************/
+
+header.row{
+      margin-bottom: 2em;
+}
+nav .nav{
+      /*font-family: 'Amatica SC', cursive;*/
+      // font-family: "Local Amatica SC Regular", cursive;
+      /*font-family: "Vincent Regular", cursive;*/
+      font-family: 'Amatica SC', cursive ;
+      font-weight: bold;
+      font-size: x-large;      
+
+}   
+.nav  li  a{
+      color:  #525252 !important;
+      background: transparent;
+      text-shadow: 2px 3px 4px rgba(0,0,0,0.25);
+      transition: color 0.5s;
+      /*transition: background 0.5s;*/
+}
+
+.nav  li,.nav  li{
+     background: transparent; 
+     transition: background 0.5s;
+}
+.nav  li:hover,.nav  li:hover{
+     background: rgba(255, 255, 255, 0.5); 
+
+}
+
+.nav  li  a:hover,.nav  li  a:active{            
+      color: #bf2705 !important;
+} 
+
+.navbar-inverse, .navbar-fixed-top{
+     
+      background: rgba(255, 255, 255, 0.5) !important;
+      border-color: transparent !important;
+      position: absolute !important;
+
+}
+
+#showcase {
+      height: 70vh;
+      width: 100%;
+      margin: 0 auto;
+
+}    
+
+#nav {
+      text-align: center;
+      position: absolute;
+      left: 48vw;
+      bottom: 3em;
+      z-index: 10000;
+}
+.row > .ancla{
+      display: block;
+      margin-bottom: 5.5em;
+}
+
+/*********** Menu Iconos *************/
+.GaleriaPie .iconos{
+      background-size: cover;
+      margin: 1em 0; 
+         
+      float: left;
+      transition: background 0.5s;  	
+}
+.GaleriaPie .iconos:hover{
+      background-size: cover;
+}
+
+.aa1{
+      background: url("imagenes/iconos/1-n.png") center center no-repeat;
+
+}
+
+.aa1:hover{
+      background: url("imagenes/iconos/1-s.png") center center no-repeat;
+
+}
+
+.aa2{
+      background: url("imagenes/iconos/2-n.png") center center no-repeat;
+
+}
+.aa2:hover{
+      background: url("imagenes/iconos/2-s.png") center center no-repeat;
+} 
+
+.aa3{
+      background: url("imagenes/iconos/3-n.png") center center no-repeat;
+
+}
+.aa3:hover{
+      background: url("imagenes/iconos/3-s.png") center center no-repeat;
+}  
+
+.aa4{
+      background: url("imagenes/iconos/4-n.png") center center no-repeat;
+
+}
+.aa4:hover{
+      background: url("imagenes/iconos/4-s.png") center center no-repeat;
+} 
+
+.aa5{
+      background: url("imagenes/iconos/5-n.png") center center no-repeat;
+
+}
+.aa5:hover{
+      background: url("imagenes/iconos/5-s.png") center center no-repeat;
+} 
+
+.aa6{
+      background: url("imagenes/iconos/6-n.png") center center no-repeat;
+
+}
+.aa6:hover{
+      background: url("imagenes/iconos/6-s.png") center center no-repeat;
+}  
+
+.aa7{
+      background: url("imagenes/iconos/7-n.png") center center no-repeat;
+
+}
+.aa7:hover{
+      background: url("imagenes/iconos/7-s.png") center center no-repeat;
+}  
+.aa8{
+      background: url("imagenes/iconos/8-n.png") center center no-repeat;
+
+}
+.aa8:hover{
+      background: url("imagenes/iconos/8-s.png") center center no-repeat;
+}   
+
+.col-xs-1-7{
+      width: 100% !important;
+      height: 200px;
+}  
+.navbar-brand{
+      width: 80%;
+} 
+.navbar-brand > img {
+    display: block;
+    width: 70%;
+}
+@media (min-width: 460px){
+      .col-xs-1-7{
+            width: 100% !important;
+            height: 350px;
+      }         
+      .navbar-brand > img{
+            width: 40%;
+      }   
+      .nav  li  a:hover,.nav  li  a:active{      
+            background: transparent;
+      }       
+}
+
+@media (min-width: 768px){
+      .col-sm-1-7{
+            width: 50% !important;
+            height: 200px;
+      }  
+      .navbar-brand {
+        height: 50px;    
+      }   
+      .navbar-brand > img{
+            width: 40%;
+      } 
+      .nav  li  a:hover,.nav  li  a:active{      
+            background: transparent;
+      }                          
+}
+ 
+
+@media (min-width: 990px){
+      .col-md-1-7{
+            width: 14.2% !important;
+            height: 80px;
+
+      }    
+      .navbar-brand {
+          height: 100px;
+      }                
+      .navbar-brand > img{
+            width: 50%;
+      } 
+      .nav  li  a:hover,.nav  li  a:active{      
+            background: url("imagenes/menu/linea.png") center 100% no-repeat;
+      }               
+}
+
+@media (min-width: 1200px){
+      .col-lg-1-7{
+            width: 14.2% !important;
+            height: 100px;
+
+      } 
+      .navbar-brand {
+        height: 90px;    
+      }  
+      .navbar-brand > img{
+            width: 55%;
+      }     
+      .nav  li  a:hover,.nav  li  a:active{      
+            background: url("imagenes/menu/linea.png") center 100% no-repeat;
+      }           
+}
+
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+      
+}
+
+/************* Carousel inicio *******************/
+.imagenCategoria > .tituloCategoria{
+  position: absolute;
+  z-index: 100000000;
+  background: rgba(255,255,255,0.5);
+  top: 0;
+  width: 100%;
+}
+
+.imagenCategoria > .tituloCategoria h2{
+  text-align: center;
+  margin: 5px 0;
+}
+
+.imagenCategoria >  .descripcionCategoria{
+
+}
+
+/************* Articulos, Paginas y Blog ***********************/
+
+.thumb{
+     overflow: hidden;  
+     padding-top: 2em;
+     text-align: center;
+}
+.thumb .size-thumbnail-100,.thumb .thumbnail-100 {
+
+      /*display: block;
+      width: 90%;
+      height: 60vh;
+      object-fit: cover;*/
+} 
+
+/*********** Campo de Busqueda *************************/
+.sf-filter{
+      width: 100%;
+      /*background: #bbbbbb !important;*/
+      padding: 2em 0.5em;
+      border-radius: 20px 0px 20px 0px;
+      -moz-border-radius: 20px 0px 20px 0px;
+      -webkit-border-radius: 20px 0px 20px 0px;
+}
+.sf-filter  legend{
+      color: white;
+    font-size: 12pt;
+    font-weight: bold;      
+}
+.sf-filter >.sf-element {
+      max-width: 14% !important;
+      width: 14% !important;
+      margin-right: 2% !important;
+      float: left;
+}
+.sf-result h3{
+      text-align: center;   
+}
+.sf-result h3 a{
+      text-decoration: none;
+      color: #525252;;
+      font-size: xx-large;
+      border-bottom: none;      
+      transition: border-bottom 0.5s;
+      
+}
+.sf-result > li > div{
+      text-align: center;
+}
+.sf-result h3 a:hover, .sf-result h3 a:active{
+      text-decoration: none;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+}
+.sf-result li {
+    /*background: #bbbbbb !important;*/
+    /*color: #fff;*/
+    color:#525252;
+    background:#fff !important;
+    -webkit-border-radius: 20px 0px 20px 0px;
+    -moz-sborder-radius: 20px 0px 20px 0px;
+    border-radius: 20px 0px 20px 0px;
+    -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3); 
+    -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3); 
+    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3);   
+}
+ul.sf-result img{
+      margin: 1.5em;
+}
+ 
+.sf-result p{
+      font-size: medium;
+}
+.header-bg, .sf-filter{ 
+      transition: background 0.5s;
+}
+/**************** Pie de Página *******************/
+.ancla_inicio{
+      text-decoration: none;
+      color: #fff;
+      font-size: 2em;
+      position: fixed;
+      right: 20px;
+      bottom: 100px;
+      z-index: 1000000;
+      display: block;
+      padding: 25px;
+      border-radius: 500px;
+}
+
+.header-footer{
+       background: url("imagenes/footer_arriba.png") bottom center no-repeat;
+       background-size: contain;
+       height: 106px;
+}
+footer {
+      background: #219CD3 ;
+      color: #fff;
+      border-top: none;
+      margin-top: 0;
+      padding-top: 35px;
+      padding-bottom: 36px;    
+}
+footer ul li{
+      list-style: none;
+}
+footer a{
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+}
+footer h2.block-title {
+    text-align: left !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    font-size: 3em;
+}
+@media (min-width: 769px){
+
+      footer .col-md-6, footer .col-md-6 h2.block-title, footer .col-md-6 p {
+          text-align: right !important;
+      }
+}
