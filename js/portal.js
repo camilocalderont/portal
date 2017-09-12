@@ -1,56 +1,140 @@
 $(document).ready(function(e){
-	$('a').click(function(){
-		/*$('html, body').animate({
-			scrollTop: $( $(this).attr('href') ).offset().top
-		}, 500);*/
-		$( window ).scrollTo( $(this).attr('href'), {
+
+	//Añadir efecto Espejo a imagenes Carousel, se elimina de la propia Api
+	$(".imagenCategoria img").reflect();
+
+
+
+
+	//Efectos para Descripción
+	//inicia Ocultando Descripciones
+	$(".imagenCategoria > .descripcionCategoria").addClass("hidden");
+
+	//Asigna Alto de Imagenes a la descripción:
+	var altoImg=$(".imagenCategoria img").first().outerHeight(true);
+	//console.log('altoImg: '+altoImg);
+	$(".imagenCategoria > .descripcionCategoria").each(function(){
+		$(this).css('height',(altoImg-5)+'px');
+	});
+
+	//Evento Hover en las imagenes para mostrarla
+	/*$(".imagenCategoria img").mouseenter(
+		function(e){
+			//e.stopPropagation();
+			//Obtiene la descripción más próxima a la imagen
+			descripcion=$(this).parent().nextAll(".descripcionCategoria").eq(0);
+			//console.log("Entra html: "+descripcion.html());
+			descripcion.removeClass("hidden animated fadeOutDown");
+			descripcion.addClass("visible animated fadeInUp");
+		}	
+	);
+
+	$(".imagenCategoria > .descripcionCategoria").mouseleave(
+		function(e){ 
+			$(this).removeClass("animated fadeInUp");
+			$(this).addClass("animated fadeOutDown"); 			
+
+		}		
+	);*/
+
+	$(".imagenCategoria").mousemove(function(e){
+		var descripcion=$(this).children(".descripcionCategoria").eq(0);
+		if(!descripcion.hasClass("fadeInUp")){
+			var childOffset = $(this).children("div").children("img").offset(); 
+			var relY = e.pageY - childOffset.top;			
+			if(relY<=altoImg){
+						
+				//descripcion=$(this).nextAll(".descripcionCategoria").eq(0);
+				descripcion.removeClass("hidden animated fadeOutDown");
+				descripcion.addClass("visible animated fadeInUp");
+			}
+		}			
+	});
+
+	$(".imagenCategoria").hover(
+		function(e){
+			var childOffset = $(this).children("div").children("img").offset(); 
+			var relY = e.pageY - childOffset.top;	
+			//console.log('relX: '+relX+' relY:'+relY+' altoImg: '+altoImg); 
+			if(relY<=altoImg){
+				descripcion=$(this).children(".descripcionCategoria").eq(0);			
+				//descripcion=$(this).nextAll(".descripcionCategoria").eq(0);
+				descripcion.removeClass("hidden animated fadeOutDown");
+				descripcion.addClass("visible animated fadeInUp");
+			}
+		},	
+		function(e){ 
+			descripcion=$(this).children(".descripcionCategoria").eq(0);	
+			//descripcion=$(this).nextAll(".descripcionCategoria").eq(0);
+			descripcion.removeClass("animated fadeInUp");
+			descripcion.addClass("animated fadeOutDown"); 	
+		}			
+	);
+
+	//Función para Anclas Generales
+	$('a.ancla').click(function(){
+		link=this.getAttribute('href').substr(this.getAttribute('href').indexOf("#"));
+		$( window ).scrollTo( link, {
 					duration: 500
 		});
 		return false;
 	});
-	$('a[href="#inicio"]').trigger("click");
 
+	//Si se redirecciona con enlace Ancla, hacer efecto Scroll
+	if(window.location.href.indexOf("#")!==-1 && window.location.href.indexOf("#sf")===-1){
+		link=window.location.href.substr(window.location.href.indexOf("#"));
+		console.log("link inicial: "+link);
+		$( window ).scrollTo( link, {
+			duration: 500 //,
+			//offset: { top: menuTop - navigationOuterHeight }
+		});	
+	}
 
+	else
+		$('a[href="#inicio"]').trigger("click");
 
-	//Esta version no admite .on
-	$('.menu-item a[href^="#"]').on('click', function(e) {
-	//$( "body" ).delegate( '.menu-item a[href^="#"]', "click", function(e) {		
+	//Redireccionar cuando el ancla no esta en el inicio, o hacer Scroll en caso contrario
+	$('.menu-item > a[href*="#"]').click(function(){
+		
 	//meniItem.bind('click',function( e ) {
+		
 		if(this.getAttribute('href')!=='#content'){
-			e.preventDefault(); 
+			//e.preventDefault(); 
 			//obtener la base URL
 			if (typeof location.origin === 'undefined')
 			    location.origin = location.protocol + '//' + location.host;				
 			baseUrl = location.origin + '/';
 
-			//alert("baseUrl: "+baseUrl+" | window.location.href: "+window.location.href);
+			//console.log("baseUrl: "+baseUrl+" | window.location.href: "+window.location.href);
 
 			//baseUrl: http://localhost:4321/ | window.location.href: http://localhost:4321/portal/
 			if(window.location.href.length > baseUrl.length && window.location.href.indexOf('#')===-1)
 			{
 
 				link=baseUrl+this.getAttribute('href');
-
+				console.log("link 1:"+link);
 				window.location.href=link;
 			}
 			else
-			{					
-				link=this.getAttribute('href');
-				
-				/*$('html, body').animate({
-					scrollTop: $( link ).offset().top
-				}, 500);*/
+			{	
+
+				//link=this.getAttribute('href'); 
+				link=this.getAttribute('href').substr(this.getAttribute('href').indexOf("#"));
+				console.log("link 2:"+link);
+				//$('html, body').animate({
+				//	scrollTop: $( link ).offset().top
+				//}, 500);
 				
 				$( window ).scrollTo( link, {
-					duration: 1000 /*,
-					offset: { top: menuTop - navigationOuterHeight }*/
+					duration: 500 //,
+					//offset: { top: menuTop - navigationOuterHeight }
 				});					
 				
 			}					
 						
 		}
 
-	});		
+	});	
 
 
 
@@ -62,13 +146,14 @@ $(function() {
 	showcase.Cloud9Carousel( {
 		yOrigin: 42,
 		yRadius: 48,
-		mirror: {
+		/*mirror: {
 			gap: 12,
 			height: 0.2
-		},
+		},*/
 		buttonLeft: $("#nav > .left"),
 		buttonRight: $("#nav > .right"),
 		autoPlay: 1,
+		autoPlayDelay: 3000,
 		bringToFront: true,
 		onRendered: rendered,
 		onLoaded: function() {

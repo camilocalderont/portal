@@ -280,19 +280,43 @@ nav .nav{
 /************* Carousel inicio *******************/
 .imagenCategoria > .tituloCategoria{
   position: absolute;
-  z-index: 100000000;
-  background: rgba(255,255,255,0.5);
+  z-index: 100000001;
+  background: rgba(0,0,0,0.6);
   top: 0;
   width: 100%;
+  -webkit-border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0px 0px;  
 }
 
 .imagenCategoria > .tituloCategoria h2{
   text-align: center;
   margin: 5px 0;
+  color: #fff;
+  transition: text-shadow 0.3s;
+}
+.imagenCategoria > .tituloCategoria h2:hover{
+  text-shadow: 1px 0px 3px rgba(255, 255, 255, 1);
 }
 
-.imagenCategoria >  .descripcionCategoria{
+.imagenCategoria > .descripcionCategoria {
 
+    color: white;
+    position: absolute;
+    z-index: 100000000;
+    background: rgba(0,0,0,0.6);
+    bottom: 80px; /*Inicio de Espejo imagen */
+    width: 100%;
+    text-align: justify;     
+    padding: 50px 20px 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;      
+    /*Para modificar tiemposde animate.css*/
+    -moz-animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    animation-duration: 0.5s;      
 }
 
 /************* Articulos, Paginas y Blog ***********************/

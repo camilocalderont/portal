@@ -4,6 +4,21 @@ register_nav_menus(array('menu'=>'principal'));
 if(function_exists( 'add_theme_support' ))
 add_theme_support( 'post-thumbnails' );
 
+
+function agregar_favicon(){ ?> 
+    <!-- Custom Favicons -->
+    <link rel="apple-touch-icon" sizes="120x120" href="<?= get_template_directory_uri();?>/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= get_template_directory_uri();?>/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= get_template_directory_uri();?>/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?= get_template_directory_uri();?>/favicon/manifest.json">
+    <link rel="mask-icon" href="<?= get_template_directory_uri();?>/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">    
+    <?php 
+}
+
+add_action('wp_head','agregar_favicon');
+
+
 function portal_cargar_scripts()
 {
     // Register the script like this for a plugin:
@@ -36,12 +51,15 @@ function portal_cargar_estilos()
     wp_register_style( 'bootstrap-estilo', get_template_directory_uri() . '/css/bootstrap.css',array(),false,'all');
     wp_register_style( 'bootstrap-tema-estilo', get_template_directory_uri() . '/css/bootstrap-theme.min.css',array(),false,'all');
 	wp_register_style( 'reset-navegador', get_template_directory_uri() . '/css/normalize.css', array(),false,'all');
+    wp_register_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(),false,'all');
     wp_enqueue_style( 'estilo-principal' );
     wp_enqueue_style( 'bootstrap-estilo' );
     wp_enqueue_style( 'bootstrap-tema-estilo' );
     wp_enqueue_style( 'reset-navegador' );
+    wp_enqueue_style( 'animate' );
 }
 add_action('wp_enqueue_scripts','portal_cargar_estilos');
+
 
 
 ?>
