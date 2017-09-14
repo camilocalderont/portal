@@ -60,7 +60,7 @@ p{
 /*********** Menu y Header *************/
 
 header.row{
-      margin-bottom: 2em;
+      margin-bottom: 0em; 
 }
 nav .nav{
       /*font-family: 'Amatica SC', cursive;*/
@@ -120,6 +120,9 @@ nav .nav{
 }
 
 /*********** Menu Iconos *************/
+.GaleriaPie{
+  margin-top: 2em;
+}
 .GaleriaPie .iconos{
       background-size: cover;
       margin: 1em 0; 
@@ -300,7 +303,7 @@ nav .nav{
 }
 
 .imagenCategoria > .descripcionCategoria {
-
+    font-family: 'Montserrat', sans-serif;
     color: white;
     position: absolute;
     z-index: 100000000;
@@ -321,9 +324,12 @@ nav .nav{
 
 /************* Articulos, Paginas y Blog ***********************/
 
+.contenido h2{
+  margin-top: 0px !important; 
+}
 .thumb{
      overflow: hidden;  
-     padding-top: 2em;
+     margin: 4em 2em 2em 0em;
      text-align: center;
 }
 .thumb .size-thumbnail-100,.thumb .thumbnail-100 {
@@ -338,7 +344,7 @@ nav .nav{
 .sf-filter{
       width: 100%;
       /*background: #bbbbbb !important;*/
-      padding: 2em 0.5em;
+      padding: 0.7em;
       border-radius: 20px 0px 20px 0px;
       -moz-border-radius: 20px 0px 20px 0px;
       -webkit-border-radius: 20px 0px 20px 0px;
@@ -353,6 +359,9 @@ nav .nav{
       width: 14% !important;
       margin-right: 2% !important;
       float: left;
+}
+.sf-element legend{
+  font-size: 1em;
 }
 .sf-result h3{
       text-align: center;   

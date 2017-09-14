@@ -2,7 +2,7 @@
 <div class="row">
   <?php if(have_posts()): while(have_posts()): the_post(); ?>
   <article>
-    <div class="contenido col-xs-12 col-sm-12col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+    <div class="contenido col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
       <h2><?php the_title();?></h2>
       <div class="date"><?php the_date(); ?><span><?php the_category(); ?></span></div>
       <?php the_content();?>
@@ -25,20 +25,26 @@ jQuery(document).ready(function(e){
         //alert(jQuery("#sf-field-1").val());
         var background="#cccccc";
         var id_imagen=jQuery(this).val();
+        //console.log(JSON.stringify(id_imagen));
+        if(id_imagen==""){
+
+          background="#ac1832";
+          id_imagen=0; 
+        }
         if(id_imagen==2) //Danza
-          background="#ff5b40"; 
+          background="#eb5f46"; 
         else if(id_imagen==3) //Música
-          background="#765fe1";
+          background="#615da7";
         else if(id_imagen==4) //Literatura
-          background="#59d37e";  
+          background="#6cbb7a";  
         else if(id_imagen==5) //Teatro
           background="#c5d62e"; 
         else if(id_imagen==6) //Creación Digital
           background="#ffc200"; 
         else if(id_imagen==7) //Artes Plásticas
-          background="#20b9d9"; 
+          background="#1fbad8"; 
         else if(id_imagen==8) //Audiovisuales
-          background="#fd597b";   
+          background="#eb597d";   
         var fondoContenidos=".sf-result li h3 a{ color: "+background+" !important;}";
         //console.log(fondoContenidos.length);
         
@@ -49,10 +55,10 @@ jQuery(document).ready(function(e){
         jQuery(".sf-wrapper style").html(estilos);
 
         //background=background+" !important";
-        var header_image_src=template_url+"/imagenes/banners/"+jQuery(this).val()+".jpg";
+        var header_image_src=template_url+"/imagenes/banners/"+id_imagen+".jpg";
         jQuery('.header-bg').css({'background':'url('+ header_image_src+') left top no-repeat',
                                    'width': '100%',
-                                   'height': '200px',
+                                   'height': '150px',
                                    'background-size':'cover',
                                    'margin-top': '110px'});
         jQuery('.sf-filter').css('background',background);                    

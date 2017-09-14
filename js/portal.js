@@ -17,30 +17,12 @@ $(document).ready(function(e){
 		$(this).css('height',(altoImg-5)+'px');
 	});
 
-	//Evento Hover en las imagenes para mostrarla
-	/*$(".imagenCategoria img").mouseenter(
-		function(e){
-			//e.stopPropagation();
-			//Obtiene la descripción más próxima a la imagen
-			descripcion=$(this).parent().nextAll(".descripcionCategoria").eq(0);
-			//console.log("Entra html: "+descripcion.html());
-			descripcion.removeClass("hidden animated fadeOutDown");
-			descripcion.addClass("visible animated fadeInUp");
-		}	
-	);
-
-	$(".imagenCategoria > .descripcionCategoria").mouseleave(
-		function(e){ 
-			$(this).removeClass("animated fadeInUp");
-			$(this).addClass("animated fadeOutDown"); 			
-
-		}		
-	);*/
 
 	$(".imagenCategoria").mousemove(function(e){
 		var descripcion=$(this).children(".descripcionCategoria").eq(0);
 		if(!descripcion.hasClass("fadeInUp")){
 			var childOffset = $(this).children("div").children("img").offset(); 
+			var altoImg = $(this).children("div").children("img").outerHeight(true);
 			var relY = e.pageY - childOffset.top;			
 			if(relY<=altoImg){
 						
@@ -54,8 +36,9 @@ $(document).ready(function(e){
 	$(".imagenCategoria").hover(
 		function(e){
 			var childOffset = $(this).children("div").children("img").offset(); 
+			var altoImg = $(this).children("div").children("img").outerHeight(true);
 			var relY = e.pageY - childOffset.top;	
-			//console.log('relX: '+relX+' relY:'+relY+' altoImg: '+altoImg); 
+			console.log(' relY:'+relY+' - altoImg: '+altoImg); 
 			if(relY<=altoImg){
 				descripcion=$(this).children(".descripcionCategoria").eq(0);			
 				//descripcion=$(this).nextAll(".descripcionCategoria").eq(0);
