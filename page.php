@@ -59,8 +59,7 @@ jQuery(document).ready(function(e){
         jQuery('.header-bg').css({'background':'url('+ header_image_src+') left top no-repeat',
                                    'width': '100%',
                                    'height': '150px',
-                                   'background-size':'cover',
-                                   'margin-top': '110px'});
+                                   'background-size':'cover'});
         jQuery('.sf-filter').css('background',background);                    
     
         //alert("header_image_src:"+header_image_src+" - background: "+background);

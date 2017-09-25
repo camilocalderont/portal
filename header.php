@@ -25,31 +25,47 @@
 <body>
   <header class="row">
     <span class="ancla" id="inicio"></span>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="banner">
       <div class="container">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-responsivo">              
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url');?>/imagenes/menu/logo.png" alt="Portal de Contenidos"/>&nbsp;</a>
-          </div> 
-          <div class="collapse navbar-collapse" id="menu-responsivo">
-          	<?php wp_nav_menu(
-          		array(
-          			'container'=>false,
-          			'items_wrap'=>'<ul id="menu-top" class="nav navbar-nav multi-level">%3$s</ul>',
-          			'theme_location'=>'menu'
-          			)
-          		);
-
-          	?>
-          </div>                                
-        </div>
+            <a class="navbar-brand" href="<?php echo get_home_url(); ?>">
+              <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-portal-header.png" alt="Portal de Contenidos"/>&nbsp;
+            </a>   
+            <a class="navbar-brand" href="https://www.clan.gov.co">
+              <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-crea-header.png" alt="Crea - Formación y Creación Artística"/>&nbsp;
+            </a>    
+            <div class="social">
+            <a  class="icono" href="https://www.facebook.com/creaidartes/">
+              <img src="<?php bloginfo('template_url');?>/imagenes/menu/sociales-02.png" alt="Facebook de Crea - Formación y Creación Artística"/>&nbsp;
+            </a>  
+            <a  class="icono" href="https://twitter.com/CreaIdartes">
+              <img src="<?php bloginfo('template_url');?>/imagenes/menu/sociales-03.png" alt="Twitter de Crea - Formación y Creación Artística"/>&nbsp;
+            </a>                            
+            </div>             
       </div>
-    </nav>
+    </div>
+    <div id="menu_responsive">
+      <h2>Menu</h2>
+      <button id="boton_menu">        
+        <span class="linea"></span>
+        <span class="linea"></span>
+        <span class="linea"></span>
+      </button>
+    </div>
+    <div id="contenedorMenu">
+      <nav class="navbar" role="navigation">
+        <div class="container">
+            	<?php wp_nav_menu(
+            		array(
+            			'container'=>false,
+            			'items_wrap'=>'<ul id="menu-top" class="nav navbar-nav multi-level">%3$s</ul>',
+            			'theme_location'=>'menu'
+            			)
+            		);
+
+            	?>
+        </div>
+      </nav>
+    </div>
     <div class="container header-bg">
     </div>
   </header>

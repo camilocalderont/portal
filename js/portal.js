@@ -1,9 +1,26 @@
 $(document).ready(function(e){
 
+	//Header con Scroll 
+
+  	$('.navbar').scrollToFixed({
+        preFixed: function() { 
+        	$(this).css('background', '#219cd3'); 
+        	$('#menu-top').children('li').children('a').css('color','#ffffff');
+        }, 
+        postFixed: function() { 
+        	$(this).css('background', '#ffffff'); 
+			$('#menu-top').children('li').children('a').css('color','#525252'); 
+        }
+    }); 
+
 	//Añadir efecto Espejo a imagenes Carousel, se elimina de la propia Api
 	$(".imagenCategoria img").reflect();
 
 
+	$("#boton_menu").click(function(e){
+		//alert("h");
+		$("#contenedorMenu").toggle();
+	});
 
 
 	//Efectos para Descripción
