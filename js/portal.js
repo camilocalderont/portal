@@ -1,8 +1,9 @@
 $(document).ready(function(e){
 
 	//Header con Scroll 
+ 
 
-  	$('.navbar').scrollToFixed({
+  	$('.navbarra').scrollToFixed({
         preFixed: function() { 
         	$(this).css('background', '#219cd3'); 
         	$('#menu-top').children('li').children('a').css('color','#ffffff');
@@ -17,9 +18,29 @@ $(document).ready(function(e){
 	$(".imagenCategoria img").reflect();
 
 
+	//Codigo para Menu Responsive
+	var menuAbierto=false;
 	$("#boton_menu").click(function(e){
 		//alert("h");
-		$("#contenedorMenu").toggle();
+		if(!menuAbierto){
+			$("#contenedorMenu").animate({
+				left: '0'
+			});
+			menuAbierto=true;
+		}
+		else{
+			$("#contenedorMenu").animate({
+				left: '-100%'
+			});			
+			menuAbierto=false;
+		}
+	});
+
+	$("#menu-top li a").click(function(e){
+		$("#contenedorMenu").animate({
+			left: '-100%'
+		});		
+		menuAbierto=false;	
 	});
 
 

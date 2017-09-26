@@ -27,24 +27,23 @@
     <span class="ancla" id="inicio"></span>
     <div class="banner">
       <div class="container">
-            <a class="navbar-brand" href="<?php echo get_home_url(); ?>">
-              <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-portal-header.png" alt="Portal de Contenidos"/>&nbsp;
+            <a class="navbar-brand" id="enlace-portal" href="<?php echo get_home_url(); ?>" >
+              <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-portal-header.png" alt="Portal de Contenidos" />&nbsp;
             </a>   
-            <a class="navbar-brand" href="https://www.clan.gov.co">
+            <a class="navbar-brand" id="enlace-crea" href="https://www.clan.gov.co" target="_blank">
               <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-crea-header.png" alt="Crea - Formación y Creación Artística"/>&nbsp;
             </a>    
             <div class="social">
-            <a  class="icono" href="https://www.facebook.com/creaidartes/">
+            <a  class="icono" href="https://www.facebook.com/creaidartes/" target="_blank">
               <img src="<?php bloginfo('template_url');?>/imagenes/menu/sociales-02.png" alt="Facebook de Crea - Formación y Creación Artística"/>&nbsp;
             </a>  
-            <a  class="icono" href="https://twitter.com/CreaIdartes">
+            <a  class="icono" href="https://twitter.com/CreaIdartes" target="_blank">
               <img src="<?php bloginfo('template_url');?>/imagenes/menu/sociales-03.png" alt="Twitter de Crea - Formación y Creación Artística"/>&nbsp;
             </a>                            
             </div>             
       </div>
     </div>
-    <div id="menu_responsive">
-      <h2>Menu</h2>
+    <div id="menu_responsive">         
       <button id="boton_menu">        
         <span class="linea"></span>
         <span class="linea"></span>
@@ -52,12 +51,12 @@
       </button>
     </div>
     <div id="contenedorMenu">
-      <nav class="navbar" role="navigation">
+      <nav class="navbarra" role="navigation">
         <div class="container">
             	<?php wp_nav_menu(
             		array(
             			'container'=>false,
-            			'items_wrap'=>'<ul id="menu-top" class="nav navbar-nav multi-level">%3$s</ul>',
+            			'items_wrap'=>'<ul id="menu-top" class="nav navbar-nav">%3$s</ul>',
             			'theme_location'=>'menu'
             			)
             		);

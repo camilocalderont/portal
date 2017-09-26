@@ -103,7 +103,7 @@ en acción teatral.</span>
   </div>      
   <hr>
   <div class="row">
-    <span class="ancla" id="portal"></span>
+    <span class="ancla" id="portal"></span><br><br>
     <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
       <h2 class="titulo">Portal</h2>
       <p>Bienvenidos al portal de contenidos Crea, queremos compartir contigo los resultados de los
@@ -122,7 +122,7 @@ en acción teatral.</span>
   </div>
   <hr>
   <div class="row">
-    <span class="ancla" id="nuestrosCrea"></span>
+    <span class="ancla" id="nuestrosCrea"></span><br><br>
     <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
       <h2 class="titulo">Encuentre su CREA más cercano</h2>
     </div>
@@ -193,7 +193,7 @@ en acción teatral.</span>
   </div>
   <hr>
   <div class="row">
-    <span class="ancla" id="contactenos"></span>
+    <span class="ancla" id="contactenos"></span><br><br>
     <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
       <h2 class="titulo">Contáctenos</h2>
       <p>Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo).</p>

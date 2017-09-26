@@ -61,11 +61,13 @@ p{
 
 .navbar-brand{
   margin: 0 2em;
+  transition: 0.5s;
 } 
 .social{
   float: right;
   display: flex;
   height: 90px;
+  transition: 0.5s;
 }
 .social .icono{
   margin: auto 5px;
@@ -88,25 +90,20 @@ header.row{
   position: fixed !important;
   width: 100%;
   top:0;
-  left:0;
   height: 90px;
-  background-color: #fff;
-  z-index: 10000000000000;      
-}
-#menu_responsive h2{
-  float: left;
-  display: block;
-  width: 60%;
+  /*background-color: rgba(255,255,255,0.95);*/
+  z-index: 1001;   
+
 }
 
 #boton_menu{
   
-  background: transparent;
+  background: rgba(255,255,255,0.85);
   width: 40px;
   height: 40px;
   position: absolute;
   top: 25px;
-  right: 60px;
+  right: 10px;
   outline: none;
   cursor: pointer;
   border: 2px solid #262626;
@@ -153,13 +150,12 @@ nav .nav{
       /*color:  #525252 !important;*/
       background: transparent;
       text-shadow: 2px 3px 4px rgba(0,0,0,0.25);
-      transition: color 0.5s;
-      /*transition: background 0.5s;*/
+      transition: 0.5s;
 }
 
 .nav  li,.nav  li{
      background: transparent; 
-     transition: background 0.5s;
+     transition:  0.5s;
 }
 .nav  li:hover,.nav  li:hover{
      background: rgba(255, 255, 255, 0.5); 
@@ -172,7 +168,7 @@ nav .nav{
       background-color: transparent !important;    
 } 
 
-.navbar{
+.navbarra{
      
       /*background: rgba(255, 255, 255, 0.5) !important;*/
       border-color: transparent !important;
@@ -199,7 +195,7 @@ nav .nav{
       display: block;     
 }
 
-/*********** Menu Iconos *************/
+/*********** Menu Iconos Iniciales *************/
 .GaleriaPie{
   margin-top: 0em;
 }
@@ -280,43 +276,84 @@ nav .nav{
 
 .col-xs-1-7{
       width: 100% !important;
-      height: 200px;
+      height: 210px;
 }  
+ 
+ @media (min-width: 460px){
+      .col-xs-1-7{
+            width: 100% !important;
+            height: 300px;
+      }      
+}
 
 
-@media (min-width: 460px){
+@media (min-width: 549px){
       .col-xs-1-7{
             width: 100% !important;
             height: 350px;
       }      
+} 
+
+@media (min-width: 550px){
+      .col-sm-1-7{
+            width: 50% !important;
+            height: 165px;
+            margin: 2px 0 !important;
+      }                              
+}
+
+@media (min-width: 630px){
+      .col-sm-1-7{
+            width: 50% !important;
+            height: 200px;
+            margin: 2px 0 !important;
+      }                              
 }
 
 @media (min-width: 768px){
       .col-sm-1-7{
-            width: 50% !important;
-            height: 250px;
+            width: 33% !important;
+            height: 140px;
+            margin: 2px 0 !important;
       }                              
+}
+
+@media (max-width: 568px){
+      #enlace-crea{
+        display: none !important;
+      } 
 }
  
  @media (min-width: 320px) and (max-width: 768px){ 
-      .navbar-brand {
-        height: 50px;    
-      }  
-      #contenedorMenu{
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        position: fixed !important;
-        top:90px;
-        z-index: 1000;         
-        background-color: #219cd3;
-      }  
-      #contenedorMenu a{
-        color: #ffffff;
-      }          
-      #menu_responsive{
-        display: block;             
-      }       
+    .navbar-brand {
+      height: 50px; 
+      margin: 0 1.3em;   
+    }  
+    #contenedorMenu{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      position: fixed !important;
+      top:90px;
+      left:-100%;
+      z-index: 1000;         
+      background: rgba(33, 156, 211, 0.85);
+    }  
+    #contenedorMenu a{
+      color: #ffffff;
+    }          
+    #menu_responsive{
+      display: block;             
+    }   
+    #menu-top , #menu-top li{
+      float: none; 
+    }  
+    #enlace-crea{
+      display: block;
+    }
+    .social{
+      float: left;   
+    }    
              
  }
 
@@ -326,7 +363,7 @@ nav .nav{
             height: 80px;
 
       }                     
-}
+} 
 
 @media (min-width: 1034px){ /*Tamaño desde donde se empieza a ver bien al 110px*/
       .col-lg-1-7{
@@ -383,7 +420,7 @@ nav .nav{
   text-align: center;
   margin: 5px 0;
   color: #fff;
-  transition: text-shadow 0.3s;
+  transition:  0.3s;
 }
 .imagenCategoria > .tituloCategoria h2:hover{
   text-shadow: 1px 0px 3px rgba(255, 255, 255, 1);
@@ -458,7 +495,7 @@ nav .nav{
       color: #525252;;
       font-size: xx-large;
       border-bottom: none;      
-      transition: border-bottom 0.5s;
+      transition:  0.5s;
       
 }
 .sf-result > li > div{
@@ -488,7 +525,7 @@ ul.sf-result img{
       font-size: medium;
 }
 .header-bg, .sf-filter{ 
-      transition: background 0.5s;
+      transition:  0.5s;
 }
 /**************** Pie de Página *******************/
 .ancla_inicio{

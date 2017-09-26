@@ -2,7 +2,7 @@
 <div class="row">
 	<?php if(have_posts()): while(have_posts()): the_post(); ?>
 	<article class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-		<div class="thumb col-xs-12 col-sm-12 col-md-4 col-lg-4">
+		<div class="thumb col-xs-12 col-sm-12 col-md-5 col-lg-5">
 			<?php if(has_post_thumbnail())
 					//the_post_thumbnail(array('class' => "thumbnail-100"));
 					the_post_thumbnail('medium_large',array('class' => "thumbnail-100"));
@@ -26,4 +26,4 @@
 	</div>
 </div>
 <?php //get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php get_footer(); ?> 
