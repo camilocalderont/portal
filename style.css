@@ -147,30 +147,24 @@ nav .nav{
 
 }   
 .nav  li  a{
-      /*color:  #525252 !important;*/
+      color:  #525252 !important;
       background: transparent;
       text-shadow: 2px 3px 4px rgba(0,0,0,0.25);
-      transition: 0.5s;
+      transition: color 0.5s; /*Cambiar teniendo en cuenta el cambio de background con position*/
 }
 
 .nav  li,.nav  li{
      background: transparent; 
      transition:  0.5s;
 }
-.nav  li:hover,.nav  li:hover{
-     background: rgba(255, 255, 255, 0.5); 
-
-}
 
 .nav  li  a:hover,.nav  li  a:active, .nav  li  a:focus{  
 
-      color: #bf2705 !important; 
-      background-color: transparent !important;    
+      color: #bf2705 !important;   
+      background-color: transparent !important;
 } 
 
-.navbarra{
-     
-      /*background: rgba(255, 255, 255, 0.5) !important;*/
+.navbarra{     
       border-color: transparent !important;
       border-radius: 0px;
       margin-bottom: 0px !important; 
@@ -323,8 +317,18 @@ nav .nav{
         display: none !important;
       } 
 }
+
+@media (max-width: 350px){
+      .social{
+        display: none !important;
+      } 
+}
  
- @media (min-width: 320px) and (max-width: 768px){ 
+ @media (min-width: 220px) and (max-width: 768px){ 
+    .nav  li:hover,.nav  li:hover{
+         background: rgba(255, 255, 255, 0.5); 
+
+    }  
     .navbar-brand {
       height: 50px; 
       margin: 0 1.3em;   
@@ -339,7 +343,7 @@ nav .nav{
       z-index: 1000;         
       background: rgba(33, 156, 211, 0.85);
     }  
-    #contenedorMenu a{
+    #contenedorMenu a{ 
       color: #ffffff;
     }          
     #menu_responsive{
@@ -353,7 +357,13 @@ nav .nav{
     }
     .social{
       float: left;   
-    }    
+    }   
+    .nav  li a{
+      color: #ffffff  !important;
+    }
+    .nav  li a:hover, .nav  li a:active, .nav  li a:focus {
+      color: #525252  !important;
+    }       
              
  }
 
@@ -374,30 +384,54 @@ nav .nav{
              
 }
 
+ @media (min-width: 769px) and (max-width: 989px){ 
+    #contenedorMenu a{
+      color: #525252;
+    }  
+    .navFixed{
+      background: #219cd3;
+    } 
+    .nav  li a.enlaceFixed{
+      color: #ffffff  !important;
+    }
+    .nav  li a.enlaceFixed:hover, .nav  li a.enlaceFixed:active, .nav  li a.enlaceFixed:focus {
+      color: #85ff00  !important;
+    }         
+  }
+
 @media (min-width: 990px) and (max-width: 1900px){ 
-      #contenedorMenu{
-        width: 100%;
-        height: 70px;
-        position: inherit !important; 
-        border-radius: 0px !important;
-        border-bottom: none !important;   
-        background-color: transparent;        
-      }    
-      #contenedorMenu a{
-        color: #525252;
-      }            
-      .navbar-brand {
-        height: 90px;    
-      }      
-      /*.nav  li  a{
-        color: #fff !important;
-      } */            
-      .nav  li  a:hover,.nav  li  a:active, .nav  li  a:focus{      
-            background: transparent url("imagenes/menu/linea.png") center 100% no-repeat;
-      }  
-      #menu_responsive{
-        display: none;             
-      }   
+    #contenedorMenu{
+      width: 100%;
+      height: 70px;
+      position: inherit !important; 
+      border-radius: 0px !important;
+      border-bottom: none !important;   
+      background-color: transparent;        
+    }    
+    #contenedorMenu a{
+      color: #525252;
+    }            
+    .navbar-brand {
+      height: 90px;    
+    }    
+    .navFixed{
+      background: #219cd3;
+    }
+    .nav  li a.enlaceFixed{
+      color: #ffffff  !important;
+    }
+    .nav  li a.enlaceFixed:hover, .nav  li a.enlaceFixed:active, .nav  li a.enlaceFixed:focus {
+      color: #85ff00  !important;
+    }      
+    /*.nav  li  a{
+      color: #fff !important;
+    } */            
+    .nav  li  a:hover,.nav  li  a:active, .nav  li  a:focus{      
+          background: transparent url("imagenes/menu/linea.png") center 100% no-repeat;
+    }  
+    #menu_responsive{
+      display: none;             
+    }   
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
