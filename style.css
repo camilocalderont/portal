@@ -98,7 +98,7 @@ header.row{
 
 #boton_menu{
   
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,1);
   width: 40px;
   height: 40px;
   position: absolute;
@@ -106,7 +106,7 @@ header.row{
   right: 10px;
   outline: none;
   cursor: pointer;
-  border: 2px solid #262626;
+  border: 2px solid #525252;
   border-radius: 4px;
   transition: 0.5s;
   padding: 0;  
@@ -114,28 +114,27 @@ header.row{
 .linea{
   position: relative;
   height: 2px;
-  background: #262626;
+  background: #525252;
   width: 32px;
   display: block;
   margin: 7px 2px;
   transition: 0.5s;
+  textIndent: 0px;
   /*transform-origin: center;*/
 }
-#boton_menu:hover, #boton_menu:active{
-  border-radius: 50%;
-}
+/*
 #boton_menu:hover .linea:nth-child(1),
 #boton_menu:active .linea:nth-child(1){
   transform: translateY(9px) rotate(-45deg);
-}
-#boton_menu:hover .linea:nth-child(2),
+}*/
+/*#boton_menu:hover .linea:nth-child(2),
 #boton_menu:active .linea:nth-child(2){
   opacity: 0;
 }
 #boton_menu:hover .linea:nth-child(3),
 #boton_menu:active .linea:nth-child(3){
   transform: translateY(-9px) rotate(45deg);
-}
+}*/
 
 nav .nav{
       /*font-family: 'Amatica SC', cursive;*/

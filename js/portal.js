@@ -28,12 +28,55 @@ $(document).ready(function(e){
 			$("#contenedorMenu").animate({
 				left: '0'
 			});
+			$("#boton_menu").animate({
+				'border-radius': '50%'
+			});
+		    $('#boton_menu .linea:nth-child(1)').animate({  textIndent: -45 }, {
+		        step: function(now,fx) {
+		          $(this).css({'-webkit-transform': 'translateY(9px) rotate('+now+'deg)'}); 
+		        },
+		        duration:'fast'
+		    },'linear');
+		    $('#boton_menu .linea:nth-child(2)').animate({  textIndent: 0 }, {
+		        step: function(now,fx) {
+		          $(this).css({'opacity': now}); 
+		        },
+		        duration:'fast'
+		    },'linear');        
+		    $('#boton_menu .linea:nth-child(3)').animate({  textIndent: 45 }, {
+		        step: function(now,fx) {
+		          $(this).css({'-webkit-transform': 'translateY(-9px) rotate('+now+'deg)'}); 
+		        },
+		        duration:'fast'
+		    },'linear');  			
 			menuAbierto=true;
 		}
 		else{
 			$("#contenedorMenu").animate({
 				left: '-100%'
-			});			
+			});	
+			$("#boton_menu").animate({
+				'border-radius': '4px'
+			});		
+		    $('#boton_menu .linea:nth-child(1)').animate({  textIndent: 0 }, {
+		        step: function(now,fx) {
+		          $(this).css({'-webkit-transform': 'translateY(0px) rotate('+now+'deg)'}); 
+		        },
+		        duration:'fast'
+		    },'linear');  
+		     
+		    $('#boton_menu .linea:nth-child(3)').animate({  textIndent: 0 }, {
+		        step: function(now,fx) {
+		          $(this).css({'-webkit-transform': 'translateY(0px) rotate('+now+'deg)'}); 
+		        },
+		        duration:'fast'
+		    },'linear');   
+		    $('#boton_menu .linea:nth-child(2)').animate({  textIndent: 1 }, {
+		        step: function(now,fx) {
+		          $(this).css({'opacity': now}); 
+		        },
+		        duration:'fast'
+		    },'linear'); 
 			menuAbierto=false;
 		}
 	});
@@ -176,7 +219,7 @@ $(function() {
 		buttonLeft: $("#nav > .left"),
 		buttonRight: $("#nav > .right"),
 		autoPlay: 1,
-		autoPlayDelay: 3000,
+		autoPlayDelay: 3000, 
 		bringToFront: true,
 		onRendered: rendered,
 		onLoaded: function() {
