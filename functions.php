@@ -1,5 +1,29 @@
 <?php
-register_nav_menus(array('menu'=>'principal'));
+
+
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function arphabet_widgets_init() {
+
+    register_sidebar( array(
+        'name'          => 'Home right sidebar',
+        'id'            => 'home_right_1',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ) );
+
+}
+add_action( 'widgets_init', 'arphabet_widgets_init' );
+
+register_nav_menus(array(
+    'menu_principal'=>'principal',
+    'menu_footer_uno'=>'areas',
+    'menu_footer_dos'=>'nosotros'
+));
 
 if(function_exists( 'add_theme_support' ))
 add_theme_support( 'post-thumbnails' );

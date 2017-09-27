@@ -608,3 +608,12 @@ footer h2.block-title {
           text-align: right !important;
       }
 }
+
+.menu-bottom li a{
+  font-stretch: ultra-expanded;
+  font-weight: 500;  
+  text-decoration: none;
+  padding: 5px 0;
+  text-transform: uppercase !important;
+  transition: .5s;
+}

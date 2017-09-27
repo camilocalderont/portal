@@ -30,7 +30,7 @@
             <a class="navbar-brand" id="enlace-portal" href="<?php echo get_home_url(); ?>" >
               <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-portal-header.png" alt="Portal de Contenidos" />&nbsp;
             </a>   
-            <a class="navbar-brand" id="enlace-crea" href="https://www.clan.gov.co" target="_blank">
+            <a class="navbar-brand" id="enlace-crea" href="http://www.crea.gov.co/" target="_blank">
               <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-crea-header.png" alt="Crea - Formación y Creación Artística"/>&nbsp;
             </a>    
             <div class="social">

@@ -16,16 +16,13 @@
 
           			'container'=>false,
 
-          			'items_wrap'=>'<ul id="menu-bottom">%3$s</ul>',
+          			'items_wrap'=>'<ul class="menu-bottom">%3$s</ul>',
 
-          			'theme_location'=>'menu_footer'
+          			'theme_location'=>'menu_footer_uno'
 
           			)
 
           		);
-
-
-
           	?>  			
 
   		</div>
@@ -33,6 +30,20 @@
   		<div class="col-md-3 col-xs-12 col-sm-6">
 
   			<h2 class="block-title">NOSOTROS</h2>
+            <?php wp_nav_menu(
+
+              array(
+
+                'container'=>false,
+
+                'items_wrap'=>'<ul class="menu-bottom">%3$s</ul>',
+
+                'theme_location'=>'menu_footer_dos'
+
+                )
+
+              );
+            ?>          
 
   		</div>
 

@@ -56,9 +56,9 @@ jQuery(document).ready(function(e){
 
         //background=background+" !important";
         var header_image_src=template_url+"/imagenes/banners/"+id_imagen+".jpg";
-        jQuery('.header-bg').css({'background':'url('+ header_image_src+') left top no-repeat',
+        jQuery('.header-bg').css({'background':'url('+ header_image_src+') center top no-repeat',
                                    'width': '100%',
-                                   'height': '150px',
+                                   'height': '90px',
                                    'background-size':'cover'});
         jQuery('.sf-filter').css('background',background);                    
     
