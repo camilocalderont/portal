@@ -56,11 +56,16 @@ p{
 .text-center {
     text-align: center;
 } 
+hr.linea1{
+  height: 13px;
+  border-top: none; 
+  background: url("imagenes/lineas-01.png") left top repeat-x;
+}
 
 /*********** Menu y Header *************/
 
 .navbar-brand{
-  margin: 0 2em;
+  margin: 0 0.5em;
   transition: 0.5s;
 } 
 .social{
@@ -81,7 +86,9 @@ header.row{
 }
 
 .banner{
-  background: #219cd3;
+  /*background: #219cd3;*/
+  background: url("imagenes/banners/fondo_banner.png") center center no-repeat;
+  background-size: cover;
 }
 
 /*********Responsive **************/
@@ -314,7 +321,14 @@ nav .nav{
 @media (max-width: 568px){
       #enlace-crea{
         display: none !important;
-      } 
+      }      
+}
+
+@media (max-width: 990px){
+
+      #enlace-alcaldia{
+        display: none !important;
+      }       
 }
 
 @media (max-width: 350px){
@@ -430,6 +444,9 @@ nav .nav{
     }  
     #menu_responsive{
       display: none;             
+    }  
+    #enlace-alcaldia{
+      display: block;
     }   
 }
 
@@ -616,4 +633,35 @@ footer h2.block-title {
   padding: 5px 0;
   text-transform: uppercase !important;
   transition: .5s;
+}
+
+/***************** Estilos del Mapa de Google **************************/
+.leaflet-popup-content{
+  margin: 20px 19px !important;
+}
+
+.leaflet-popup-close-button{
+  margin: 2px;
+  font: 19px/14px Tahoma, Verdana, sans-serif !important;
+}
+.leaflet-popup-content, .leaflet-popup-scrolled{
+  width: 370px !important;
+  height: 200px !important; 
+}
+.leaflet-popup-content h3{
+  font-size: 20px;
+}
+.leaflet-popup-content p {
+    margin: 0 !important;
+    font-size: 12px;
+}
+/*.popup-directions{
+  display: none !important;
+}
+.lmm-listmarkers-hr{
+  border-top: none !important;
+}*/
+.col-xs-12 ul{
+  font-family: 'Montserrat', sans-serif;
+  font-size: medium;
 }

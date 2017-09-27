@@ -5,11 +5,12 @@
  * Register our sidebars and widgetized areas.
  *
  */
-function arphabet_widgets_init() {
+
+function widgets_quienes_Somos() {
 
     register_sidebar( array(
-        'name'          => 'Home right sidebar',
-        'id'            => 'home_right_1',
+        'name'          => 'Quienes Somos',
+        'id'            => 'quienes_somos',
         'before_widget' => '<div>',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="rounded">',
@@ -17,7 +18,38 @@ function arphabet_widgets_init() {
     ) );
 
 }
-add_action( 'widgets_init', 'arphabet_widgets_init' );
+add_action( 'widgets_init', 'widgets_quienes_Somos' );
+
+function widget_donde_estamos() {
+
+    register_sidebar( array(
+        'name'          => 'Donde Estamos',
+        'id'            => 'donde_estamos',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ) );
+
+}
+add_action( 'widgets_init', 'widget_donde_estamos' );
+
+
+function widgets_contactenos() {
+
+    register_sidebar( array(
+        'name'          => 'Contáctenos',
+        'id'            => 'contactenos',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ) );
+
+}
+add_action( 'widgets_init', 'widgets_contactenos' );
+
+
 
 register_nav_menus(array(
     'menu_principal'=>'principal',

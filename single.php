@@ -11,6 +11,9 @@
 		<!-- <d iv class="contenido col-xs-12 col-sm-12 col-md-6 col-lg-6">-->
 			<h2><?php the_title();?></h2>
 			<div class="date"><?php the_date(); ?><span><?php the_category(); ?></span></div>
+			<div class="ratings">
+				<?php if(function_exists('the_ratings')){ the_ratings(); } ?>
+			</div>
 			<?php the_content();?>
 		<!-- </div>			 -->
 	</article>

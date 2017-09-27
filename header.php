@@ -32,7 +32,10 @@
             </a>   
             <a class="navbar-brand" id="enlace-crea" href="http://www.crea.gov.co/" target="_blank">
               <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-crea-header.png" alt="Crea - Formación y Creación Artística"/>&nbsp;
-            </a>    
+            </a>  
+            <a class="navbar-brand" id="enlace-alcaldia" href="http://www.bogota.gov.co/" target="_blank">
+              <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-alcaldia-header.png" alt="Alcaldía Mayor de Bogotá"/>&nbsp;
+            </a>                
             <div class="social">
             <a  class="icono" href="https://www.facebook.com/creaidartes/" target="_blank">
               <img src="<?php bloginfo('template_url');?>/imagenes/menu/sociales-02.png" alt="Facebook de Crea - Formación y Creación Artística"/>&nbsp;
