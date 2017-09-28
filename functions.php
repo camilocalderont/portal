@@ -90,14 +90,20 @@ function portal_cargar_scripts()
     wp_register_script( 'carousel', get_template_directory_uri() . '/js/jquery.cloud9carousel.js',array(),false,true);   
     wp_register_script( 'jquery-scrollto', get_template_directory_uri() . '/js/jquery.scrollTo.js',array(),false,true);
     wp_register_script( 'jquery-scrolltofixed', get_template_directory_uri() . '/js/jquery-scrolltofixed-min.js',array(),false,true);
+    wp_register_script( 'jquerypp-custom', get_template_directory_uri() . '/js/jquerypp.custom.js',array(),false,true);
+    wp_register_script( 'jquery-bookblock', get_template_directory_uri() . '/js/jquery.bookblock.min.js',array(),false,true);    
     wp_register_script( 'portal', get_template_directory_uri() . '/js/portal.js',array(),false,true);
+    wp_register_script( 'flip', get_template_directory_uri() . '/js/flip.js',array(),false,true);
     wp_register_script( 'ie-emulation', get_template_directory_uri() . '/js/ie-emulation-modes-warning.js',array(),false,true);
     wp_enqueue_script( 'bootstrap-script' );   
     wp_enqueue_script( 'reflection' ); 
     wp_enqueue_script( 'carousel' ); 
     wp_enqueue_script( 'jquery-scrollto');      
     wp_enqueue_script( 'jquery-scrolltofixed');       
+    wp_enqueue_script( 'jquerypp-custom' ); 
+    wp_enqueue_script( 'jquery-bookblock' ); 
     wp_enqueue_script( 'portal' ); 
+     wp_enqueue_script( 'flip' ); 
     wp_enqueue_script( 'ie-emulation' ); 
 }
 add_action( 'wp_enqueue_scripts', 'portal_cargar_scripts' );
@@ -110,11 +116,13 @@ function portal_cargar_estilos()
     wp_register_style( 'bootstrap-tema-estilo', get_template_directory_uri() . '/css/bootstrap-theme.min.css',array(),false,'all');
 	wp_register_style( 'reset-navegador', get_template_directory_uri() . '/css/normalize.css', array(),false,'all');
     wp_register_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(),false,'all');
+    wp_register_style( 'bookblock', get_template_directory_uri() . '/css/bookblock.css', array(),false,'all');
     wp_enqueue_style( 'estilo-principal' );
     wp_enqueue_style( 'bootstrap-estilo' );
     wp_enqueue_style( 'bootstrap-tema-estilo' );
     wp_enqueue_style( 'reset-navegador' );
     wp_enqueue_style( 'animate' );
+    wp_enqueue_style( 'bookblock' );
 }
 add_action('wp_enqueue_scripts','portal_cargar_estilos');
 
