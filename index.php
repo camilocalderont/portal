@@ -9,7 +9,7 @@
         <a title='audiovisuales' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"8","search-id":"principal"}'>
           <div class="iconos aa2 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
         </a>
-        <a title='creacion_digital' href='<?= get_home_url(); ?>/category/digital/'>
+        <a title='creacion_digital' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"6","search-id":"principal"}'>
           <div class="iconos aa3 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
         </a>
         <a title='danza' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"2","search-id":"principal"}'>
@@ -47,13 +47,11 @@ ideas, fantasías o estilos de vida.</span>
             <span class="descripcionCategoria">La danza posibilita la exploración y el descubrimiento del lenguaje corporal propio.</span>
           </div>
         </a>
-        <a title='artes_plasticas' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"7","search-id":"principal"}'>          
+        <a title='artes_plasticas' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"6","search-id":"principal"}'>          
           <div class="cloud9-item imagenCategoria">   
             <img src="<?php bloginfo('template_url');?>/imagenes/3.jpg" alt="Item #3">
-            <div class="tituloCategoria"><h2>Artes Plasticas</h2></div>
-            <span class="descripcionCategoria">En las artes plásticas como lenguaje de expresión el predominio de la fantasía, el deseo, la
-memoria  y la exploración acuden en el instante en el que siguiendo una voz, el material
-sucumbe ante la habilidad del que modela la forma, el volumen, el plano y el color.</span>
+            <div class="tituloCategoria"><h2>Creación Digital</h2></div>
+            <span class="descripcionCategoria"></span> 
           </div>
         </a>
         <a title='literatura' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"4","search-id":"principal"}'>          
@@ -124,8 +122,9 @@ en acción teatral.</span>
   </div>
   <hr>
   <div class="row">
-    <span class="ancla" id="contactenos"></span><br><br>
+    <span class="ancla" id="contactenos"></span><br><br><br><br>
     <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
+      <h2  class="titulo">Contáctanos</h2>
       <?php if ( is_active_sidebar( 'contactenos' ) ) : ?>
         <div id="contactenos">
           <?php dynamic_sidebar( 'contactenos' ); ?>

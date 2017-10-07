@@ -376,7 +376,12 @@ nav .nav{
     }
     .nav  li a:hover, .nav  li a:active, .nav  li a:focus {
       color: #525252  !important;
-    }       
+    }   
+
+    iframe{
+      width: 100% !important;
+      height: 100% !important;
+    }    
              
  }
 
@@ -408,7 +413,7 @@ nav .nav{
       color: #ffffff  !important;
     }
     .nav  li a.enlaceFixed:hover, .nav  li a.enlaceFixed:active, .nav  li a.enlaceFixed:focus {
-      color: #85ff00  !important;
+      color: #bf2705  !important;
     }         
   }
 
@@ -434,7 +439,7 @@ nav .nav{
       color: #ffffff  !important;
     }
     .nav  li a.enlaceFixed:hover, .nav  li a.enlaceFixed:active, .nav  li a.enlaceFixed:focus {
-      color: #85ff00  !important;
+      color: #bf2705  !important;
     }      
     /*.nav  li  a{
       color: #fff !important;
@@ -503,8 +508,12 @@ nav .nav{
 }
 .thumb{
      overflow: hidden;  
-     margin: 4em 2em 2em 0em;
+     margin: 2em 2em 2em 0em;
      text-align: center;
+     padding-left: 0 !important;
+}
+.thumb img{
+  float: left;
 }
 .thumb .size-thumbnail-100,.thumb .thumbnail-100 {
 
@@ -513,6 +522,19 @@ nav .nav{
       height: 60vh;
       object-fit: cover;*/
 } 
+
+.contenedorAtras{
+  padding: 0;
+}
+.botonAtras{
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
+}
+.botonAtras span{
+  font-size: 20px;
+  margin: 1px -3px;
+}
 
 /*********** Campo de Busqueda *************************/
 .sf-filter{
@@ -665,3 +687,71 @@ footer h2.block-title {
   font-family: 'Montserrat', sans-serif;
   font-size: medium;
 }
+
+/************ Estilos del Formulario ************************/
+
+.form-submit input{
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; 
+}
+.ninja-forms-field, .comment-form-comment textarea{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+
+  .ninja-forms-field:focus, .comment-form-comment textarea:focus, .form-submit input:focus {
+    border-color: transparent;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+
+textarea.ninja-forms-field, .comment-form-comment textarea, .form-submit input  {
+    height: auto;
+    border-radius: 4px 4px 0 0;
+
+}
+.nf-field-element textarea {
+    height: 150px;
+}
+
+.nf-error .ninja-forms-field {
+    border: 1px solid rgba(255, 0, 0, 0.2);
+} 
+
+.nf-field-label label{
+    color: #219cd3;
+}
+.comment-form-comment{
+
+}
+.comment-form-comment label{
+  display: block;
+}
+

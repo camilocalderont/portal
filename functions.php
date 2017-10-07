@@ -118,6 +118,7 @@ function portal_cargar_estilos()
     wp_register_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(),false,'all');
     wp_register_style( 'bookblock', get_template_directory_uri() . '/css/bookblock.css', array(),false,'all');
      wp_register_style( 'flip-css', get_template_directory_uri() . '/css/flip.css', array(),false,'all');
+     wp_register_style( 'fa', get_template_directory_uri() . '/css/font-awesome-4.7.0/css/font-awesome.min.css', array(),false,'all');
     wp_enqueue_style( 'estilo-principal' );
     wp_enqueue_style( 'bootstrap-estilo' );
     wp_enqueue_style( 'bootstrap-tema-estilo' );
@@ -125,6 +126,7 @@ function portal_cargar_estilos()
     wp_enqueue_style( 'animate' );
     wp_enqueue_style( 'bookblock' );
     wp_enqueue_style( 'flip-css' );
+    wp_enqueue_style( 'fa' );
 }
 add_action('wp_enqueue_scripts','portal_cargar_estilos');
 

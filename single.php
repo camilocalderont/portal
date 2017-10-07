@@ -2,6 +2,11 @@
 <div class="row">
 	<?php if(have_posts()): while(have_posts()): the_post(); ?>
 	<article class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+		<div class="contenedorAtras col-xs-12">
+			<button onclick="window.history.back()" class="botonAtras btn btn-success">
+				<span class="fa fa-reply"></span>
+			</button>			
+		</div>
 		<div class="thumb col-xs-12 col-sm-12 col-md-5 col-lg-5">
 			<?php if(has_post_thumbnail())
 					//the_post_thumbnail(array('class' => "thumbnail-100"));
@@ -22,7 +27,7 @@
 	<?php endif; ?>
 	<div id="comentarios" class="row">
 		
-		<div id="cajaComentarios" class="col-xs-12 col-sm-12col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+		<div id="cajaComentarios" class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 			<h3>Comentarios</h3>
 			<?php comments_template(); ?>
 		</div> 
