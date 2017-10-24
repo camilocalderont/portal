@@ -56,10 +56,12 @@ jQuery(document).ready(function(e){
 
         //background=background+" !important";
         var header_image_src=template_url+"/imagenes/banners/"+id_imagen+".jpg";
-        jQuery('.header-bg').css({'background':'url('+ header_image_src+') center top no-repeat',
-                                   'width': '100%',
-                                   'height': '90px',
-                                   'background-size':'cover'});
+        var header_texto_src=template_url+"/imagenes/banners/"+id_imagen+"-t.png";
+        var header_icono_src=template_url+"/imagenes/banners/"+id_imagen+"-i.png";
+        jQuery('.header-bg').css('background',background);  
+        jQuery('#header-texto').css({'background':'url('+ header_texto_src+') left top no-repeat'});        
+        jQuery('#header-icono').css({'background':'url('+ header_icono_src+') right top no-repeat'}); 
+
         jQuery('.sf-filter').css('background',background);                    
     
         //alert("header_image_src:"+header_image_src+" - background: "+background);

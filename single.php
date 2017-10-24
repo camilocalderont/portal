@@ -7,7 +7,7 @@
 				<span class="fa fa-reply"></span>
 			</button>			
 		</div>
-		<div class="thumb col-xs-12 col-sm-12 col-md-5 col-lg-5">
+		<div class="thumb col-xs-12 col-sm-12 col-md-6 col-lg-6">
 			<?php if(has_post_thumbnail())
 					//the_post_thumbnail(array('class' => "thumbnail-100"));
 					the_post_thumbnail('medium_large',array('class' => "thumbnail-100"));

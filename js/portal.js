@@ -202,6 +202,11 @@ $(document).ready(function(e){
 
 	});	
 
+	//Efecto botón a la paginación
+   $(document).on('DOMNodeInserted', function(e) {
+   		$(this).find('ul.sf-nav > li > span').addClass('btn btn-info');
+    });	
+
 
 
 });
