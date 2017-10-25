@@ -59,10 +59,9 @@ jQuery(document).ready(function(e){
         //console.log(estilos);
         jQuery(".sf-wrapper style").html(estilos);
 
-        //background=background+" !important";
-        var header_image_src=template_url+"/imagenes/banners/"+id_imagen+".jpg";
-        var header_texto_src=template_url+"/imagenes/banners/"+id_imagen+"-t.png";
-        var header_icono_src=template_url+"/imagenes/banners/"+id_imagen+"-i.png";
+        //background=background+" !important";        
+        var header_texto_src=template_url+"/imagenes/banners/"+id_imagen+"-t.png?v=123";
+        var header_icono_src=template_url+"/imagenes/banners/"+id_imagen+"-i.png?v=123";
         jQuery('.header-bg').css('background',background);  
         jQuery('#header-texto').css({'background':'url('+ header_texto_src+') left top no-repeat'});        
         jQuery('#header-icono').css({'background':'url('+ header_icono_src+') right top no-repeat'}); 

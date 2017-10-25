@@ -557,8 +557,8 @@ nav .nav{
 #header-texto{  
   width: 70%;
   /*background: #f80;*/
-  height: 60px;
-  margin-top: 15px;
+  height: 70px; 
+  margin-top: 12px;
   background-size:cover ;
   float: left;
   transition: 0.5s;  
