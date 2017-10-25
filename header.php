@@ -68,7 +68,7 @@
         </div>
       </nav>
     </div>
-    <div class="row header-bg">
+    <div class="row header-bg hidden">
       <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
         <div id="header-texto"></div>
         <div id="header-icono"></div> 

@@ -21,7 +21,7 @@
         <a title='musica' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"3","search-id":"principal"}'>
           <div class="iconos aa6 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
         </a>
-        <a title='teatro' href='<?= get_home_url(); ?>/category/teatro/'>
+        <a title='teatro' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"5","search-id":"principal"}'>
           <div class="iconos aa7 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
         </a>
         <!-- <div class="iconos aa8 col-xs-12 col-sm-6 col-md-1-7 col-lg-1-7"></div>                                                                      -->
@@ -78,7 +78,7 @@ memoria  y la exploración acuden en el instante en el que siguiendo una voz, e
 sucumbe ante la habilidad del que modela la forma, el volumen, el plano y el color.</span>
           </div>
         </a>
-        <a title='teatro' href='<?= get_home_url(); ?>/category/teatro/'>
+        <a title='teatro' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"5","search-id":"principal"}'>
           <div class="cloud9-item imagenCategoria">   
             <img src="<?php bloginfo('template_url');?>/imagenes/7.jpg" alt="Item #7">
             <div class="tituloCategoria"><h2>Teatro</h2></div>
