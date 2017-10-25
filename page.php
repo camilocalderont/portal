@@ -4,6 +4,11 @@
   <article>
     <div class="contenido col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
       <h2><?php the_title();?></h2>
+      <div id="busqueda_responsive">         
+        <button id="boton_busqueda">        
+          <span class="fa fa-search"></span>
+        </button>
+      </div>
       <div class="date"><?php the_date(); ?><span><?php the_category(); ?></span></div>
       <?php the_content();?>
     </div>      

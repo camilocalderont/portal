@@ -88,6 +88,40 @@ $(document).ready(function(e){
 		menuAbierto=false;	
 	});
 
+	var menuBusquedaAbierto=false; 
+	$("#boton_busqueda").click(function(e){
+		if(!menuBusquedaAbierto){
+			$(".sf-filter").animate({
+				right: '0'
+			});
+			$("#boton_busqueda").animate({
+				'border-radius': '50%'
+			});			
+		    menuBusquedaAbierto=true;
+		}
+		else{
+			$(".sf-filter").animate({
+				right: '-100%'
+			});			    
+			$("#boton_busqueda").animate({
+				'border-radius': '4px'
+			});				
+			menuBusquedaAbierto=false;
+		}
+	});
+
+	$(".sf-element > select").change(cerrarBusqueda);	
+	$(".sf-element > .sf-fulltext-wrapper > input").keypress(function(e) {
+	    if(e.which == 13) 
+	        cerrarBusqueda();	    
+	});
+
+	function cerrarBusqueda(){
+		$(".sf-filter").animate({
+			right: '-100%'
+		});		
+		menuBusquedaAbierto=false;			
+	}
 
 	//Efectos para Descripción
 	//inicia Ocultando Descripciones

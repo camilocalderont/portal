@@ -6,7 +6,7 @@
 
   	<div class="container">
 
-  		<div class="col-md-3 col-xs-12 col-sm-6">
+  		<div class="menu_footer_uno col-md-3 col-xs-6 col-sm-6">
 
   			<h2 class="block-title">Menú principal</h2>
 
@@ -27,7 +27,7 @@
 
   		</div>
 
-  		<div class="col-md-3 col-xs-12 col-sm-6">
+  		<div class="menu_footer_dos col-md-3 col-xs-6 col-sm-6">
 
   			<h2 class="block-title">NOSOTROS</h2>
             <?php wp_nav_menu(
