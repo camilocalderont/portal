@@ -15,6 +15,8 @@ add_filter( 'script_loader_src', 'sdt_remove_ver_css_js', 9999 );
 function sdt_remove_ver_css_js( $src ) {
     if ( strpos( $src, 'ver=' ) )
         $src = remove_query_arg( 'ver', $src );
+    $version=random_int(1, 9999);
+    $src=$src.'?ver='.$version;
     return $src;
 }
 

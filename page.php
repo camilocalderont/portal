@@ -51,7 +51,7 @@ jQuery(document).ready(function(e){
           background="#1fbad8"; 
         else if(id_imagen==8) //Audiovisuales
           background="#eb597d";   
-        var fondoContenidos=".sf-result li a h3{ color: "+background+" !important;} ul.sf-result > li:hover:before, ul.sf-result > li:hover:after{ border-color: "+background+";}"; 
+        var fondoContenidos=".sf-result li a h3{ color: "+background+" !important;} ul.sf-result > li:hover:before, ul.sf-result > li:hover:after{ border-color: "+background+";}";  
         //console.log(fondoContenidos.length);
         
         if(estilos.indexOf('.sf-result li a h3{ color:')==0)

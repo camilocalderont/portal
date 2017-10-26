@@ -677,8 +677,12 @@ nav .nav{
   }
 }
 .sf-result h3{
+      display: table;
+      margin: 0 auto;
       text-align: center; 
-      font-size: xx-large;  
+      font-size: xx-large; 
+      border-bottom: 2px solid rgba(188, 188, 188, 0); 
+      transition: 0.5;
 }
 .sf-result li a{
       text-decoration: none;
@@ -697,20 +701,12 @@ nav .nav{
 }
 .sf-result a:hover, .sf-result a:active{
       text-decoration: none;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+
 }
-.sf-result li {
-    /*background: #bbbbbb !important;*/
-    /*color: #fff;*/
-    color:#525252;
-    background:#fff !important;
-    -webkit-border-radius: 20px 0px 20px 0px;
-    -moz-sborder-radius: 20px 0px 20px 0px;
-    border-radius: 20px 0px 20px 0px;
-    -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3); 
-    -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3); 
-    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3);   
-} 
+.sf-result a h3:hover, .sf-result a h3:active{  
+  border-bottom: 2px solid rgba(188, 188, 188, 0.5);
+}
+
 ul.sf-result img{
       margin: 1.5em;
 }
@@ -726,8 +722,24 @@ ul.sf-result img{
 ul.sf-result > li{
   position: relative;
   display: block;
-  overflow: hidden; 
+  overflow: hidden;
+  color:#525252;
+  background:#fff !important;
+  -webkit-border-radius: 20px 0px 20px 0px;
+  -moz-sborder-radius: 20px 0px 20px 0px;
+  border-radius: 20px 0px 20px 0px;
+  -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3); 
+  -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3); 
+  box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3);     
+  transition 0.5s;   
 } 
+ul.sf-result > li:hover {
+  color: inherit;
+  border: 1px solid transparent; 
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -moz-sborder-radius: 0px 0px 0px 0px;  
+  border-radius: 0px 0px 0px 0px;
+}
 
 ul.sf-result > li:before {
   box-sizing: border-box;
@@ -752,13 +764,6 @@ ul.sf-result > li:after {
   height: 2px;
   border-top: 2px solid transparent;
   border-right: 2px solid transparent;
-}
-ul.sf-result > li:hover {
-  color: inherit;
-  text-decoration: none;
-  border: none !important;
-  border-radius: 0px 0px 0px 0px;
-  transition 0.3s;
 }
 ul.sf-result > li:hover:before {
   transition: .1s transform linear, .1s height linear .1s;
