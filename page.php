@@ -4,6 +4,11 @@
   <article>
     <div class="contenido col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
       <h2><?php the_title();?></h2>
+      <div id="busqueda_responsive">         
+        <button id="boton_busqueda">        
+          <span class="fa fa-search"></span>
+        </button>
+      </div>
       <div class="date"><?php the_date(); ?><span><?php the_category(); ?></span></div>
       <?php the_content();?>
     </div>      
@@ -15,6 +20,7 @@
 <input type="hidden" id="template_url"  value="<?php bloginfo('template_url'); ?>">
 <script type="text/javascript">
 jQuery(document).ready(function(e){
+    jQuery('.header-bg').removeClass('hidden');
     var template_url=jQuery("#template_url").val();
     //alert(jQuery("#template_url").val()); 
     //alert("hola");
@@ -45,21 +51,22 @@ jQuery(document).ready(function(e){
           background="#1fbad8"; 
         else if(id_imagen==8) //Audiovisuales
           background="#eb597d";   
-        var fondoContenidos=".sf-result li h3 a{ color: "+background+" !important;}";
+        var fondoContenidos=".sf-result li a h3{ color: "+background+" !important;} ul.sf-result > li:hover:before, ul.sf-result > li:hover:after{ border-color: "+background+";}";  
         //console.log(fondoContenidos.length);
         
-        if(estilos.indexOf('.sf-result li h3 a{ color:')==0)
+        if(estilos.indexOf('.sf-result li a h3{ color:')==0)
           estilos = estilos.substring(fondoContenidos.length);
         estilos = fondoContenidos + estilos;
         //console.log(estilos);
         jQuery(".sf-wrapper style").html(estilos);
 
-        //background=background+" !important";
-        var header_image_src=template_url+"/imagenes/banners/"+id_imagen+".jpg";
-        jQuery('.header-bg').css({'background':'url('+ header_image_src+') center top no-repeat',
-                                   'width': '100%',
-                                   'height': '90px',
-                                   'background-size':'cover'});
+        //background=background+" !important";        
+        var header_texto_src=template_url+"/imagenes/banners/"+id_imagen+"-t.png?v=321";
+        var header_icono_src=template_url+"/imagenes/banners/"+id_imagen+"-i.png?v=321";
+        jQuery('.header-bg').css('background',background);  
+        jQuery('#header-texto').css({'background':'url('+ header_texto_src+') left top no-repeat'});        
+        jQuery('#header-icono').css({'background':'url('+ header_icono_src+') right top no-repeat'}); 
+
         jQuery('.sf-filter').css('background',background);                    
     
         //alert("header_image_src:"+header_image_src+" - background: "+background);

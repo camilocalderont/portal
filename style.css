@@ -92,7 +92,7 @@ header.row{
 }
 
 /*********Responsive **************/
-#menu_responsive{  
+#menu_responsive{   
   display: none;
   position: fixed !important;
   width: 100%;
@@ -103,7 +103,18 @@ header.row{
 
 }
 
-#boton_menu{
+#busqueda_responsive{
+  display: none;   
+  position: fixed !important;
+  /*width: 100%;
+  top:0;*/
+  right: 5px;
+  height: 90px;
+  /*background-color: rgba(255,255,255,0.95);*/
+  z-index: 1001;   
+}
+
+#boton_menu, #boton_busqueda{
   
   background: rgba(255,255,255,1);
   width: 40px;
@@ -321,8 +332,9 @@ nav .nav{
 @media (max-width: 568px){
       #enlace-crea{
         display: none !important;
-      }      
+      }    
 }
+
 
 @media (max-width: 990px){
 
@@ -376,7 +388,12 @@ nav .nav{
     }
     .nav  li a:hover, .nav  li a:active, .nav  li a:focus {
       color: #525252  !important;
-    }       
+    }   
+
+    iframe{
+      width: 100% !important;
+      height: 100% !important;
+    }    
              
  }
 
@@ -408,7 +425,7 @@ nav .nav{
       color: #ffffff  !important;
     }
     .nav  li a.enlaceFixed:hover, .nav  li a.enlaceFixed:active, .nav  li a.enlaceFixed:focus {
-      color: #85ff00  !important;
+      color: #bf2705  !important;
     }         
   }
 
@@ -434,7 +451,7 @@ nav .nav{
       color: #ffffff  !important;
     }
     .nav  li a.enlaceFixed:hover, .nav  li a.enlaceFixed:active, .nav  li a.enlaceFixed:focus {
-      color: #85ff00  !important;
+      color: #bf2705  !important;
     }      
     /*.nav  li  a{
       color: #fff !important;
@@ -503,8 +520,12 @@ nav .nav{
 }
 .thumb{
      overflow: hidden;  
-     margin: 4em 2em 2em 0em;
+     margin: 5px 2em 2em 0em;
      text-align: center;
+     padding-left: 0 !important;
+}
+.thumb img{
+  float: left;
 }
 .thumb .size-thumbnail-100,.thumb .thumbnail-100 {
 
@@ -514,59 +535,178 @@ nav .nav{
       object-fit: cover;*/
 } 
 
-/*********** Campo de Busqueda *************************/
-.sf-filter{
-      width: 100%;
-      /*background: #bbbbbb !important;*/
-      padding: 0.7em;
-      border-radius: 20px 0px 20px 0px;
-      -moz-border-radius: 20px 0px 20px 0px;
-      -webkit-border-radius: 20px 0px 20px 0px;
+.contenedorAtras{
+  padding: 0;
 }
+.botonAtras{
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
+}
+.botonAtras span{
+  font-size: 20px;
+  margin: 1px -3px;
+}
+
+/*********** Banner Busqueda ******************/
+.header-bg{
+  width: 100%;
+  height: 90px;
+  background-size:cover ;
+}
+#header-texto{  
+  width: 70%;
+  /*background: #f80;*/
+  height: 70px; 
+  margin-top: 12px;
+  background-size:cover ;
+  float: left;
+  transition: 0.5s;  
+}
+
+#header-icono{  
+  width: 30%;
+  /*background: #0f0;  */
+  height: 70px;
+  margin-top: 12px;
+  background-size:cover ;  
+  float: right;
+  transition: 0.5s;
+}
+
+@media (max-width: 568px){
+    #header-texto{  
+      width: 100%;
+    }  
+    #header-icono{
+       display: none !important;       
+    }      
+}
+
+ @media (min-width: 569px) and (max-width: 768px){ 
+  #header-texto{  
+    width: 80%;
+  }
+  #header-icono{  
+    width: 20%;
+  }  
+
+} 
+
+/*********** Campo de Busqueda *************************/
 .sf-filter  legend{
-      color: white;
-    font-size: 12pt;
+   color: white;
     font-weight: bold;      
 }
-.sf-filter >.sf-element {
-      max-width: 14% !important;
-      width: 14% !important;
-      margin-right: 2% !important;
-      float: left;
+ 
+.sf-element select, .sf-element .sf-fulltext-wrapper input {
+    display: block;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;   
 }
-.sf-element legend{
-  font-size: 1em;
+
+.sf-element select:focus, .sf-element .sf-fulltext-wrapper input:focus
+{
+    border-color: transparent;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+@media (min-width: 220px) and (max-width: 768px){ 
+    .sf-filter{
+      width: 100%;
+      height: auto;
+      padding: 0 10px 100px 10px;
+      position: fixed !important;
+      top:90px;
+      right:-100%;
+      z-index: 999;         
+      opacity: .92;
+    }
+    #busqueda_responsive{
+      display: block;             
+    }   
+    .sf-filter  legend{
+        font-size: 12pt !important;   
+    }
+}
+@media (min-width: 220px) and  (max-width: 550px) { /*(max-width: 768px){ */
+    .sf-filter > .sf-element{ 
+      width: 92%;
+      margin: 5px 0;
+    }
+}
+@media (min-width: 551px) and  (max-width: 768px) { /*(max-width: 768px){ */
+    .sf-filter > .sf-element{ 
+      width: 44%;
+      margin: 5px;
+      float: left;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 990px){ 
+    .sf-filter  legend{
+        font-size: 9pt !important;   
+    }
+}
+@media (min-width: 769px) and (max-width: 2500px){ 
+  .sf-filter{
+        width: 100%;
+        /*background: #bbbbbb !important;*/
+        padding: 0.7em;
+        border-radius: 20px 0px 20px 0px;
+        -moz-border-radius: 20px 0px 20px 0px;
+        -webkit-border-radius: 20px 0px 20px 0px;
+  }
+
+  .sf-filter >.sf-element {
+        max-width: 14% !important;
+        width: 14% !important;
+        margin-right: 2% !important;
+        float: left;
+  }
 }
 .sf-result h3{
-      text-align: center;   
+      display: table;
+      margin: 0 auto;
+      text-align: center; 
+      font-size: xx-large; 
+      border-bottom: 2px solid rgba(188, 188, 188, 0); 
+      transition: 0.5;
 }
-.sf-result h3 a{
+.sf-result li a{
       text-decoration: none;
       color: #525252;;
-      font-size: xx-large;
       border-bottom: none;      
       transition:  0.5s;
+      display:  block;
+      width:  100%;
+      height:  100%;
+      position: relative;
+      z-index:  998;     
       
 }
 .sf-result > li > div{
       text-align: center;
 }
-.sf-result h3 a:hover, .sf-result h3 a:active{
+.sf-result a:hover, .sf-result a:active{
       text-decoration: none;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+
 }
-.sf-result li {
-    /*background: #bbbbbb !important;*/
-    /*color: #fff;*/
-    color:#525252;
-    background:#fff !important;
-    -webkit-border-radius: 20px 0px 20px 0px;
-    -moz-sborder-radius: 20px 0px 20px 0px;
-    border-radius: 20px 0px 20px 0px;
-    -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3); 
-    -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3); 
-    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3);   
+.sf-result a h3:hover, .sf-result a h3:active{  
+  border-bottom: 2px solid rgba(188, 188, 188, 0.5);
 }
+
 ul.sf-result img{
       margin: 1.5em;
 }
@@ -576,6 +716,140 @@ ul.sf-result img{
 }
 .header-bg, .sf-filter{ 
       transition:  0.5s;
+}
+
+/**************** Resultado de busqueda *************/
+ul.sf-result > li{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  color:#525252;
+  background:#fff !important;
+  -webkit-border-radius: 20px 0px 20px 0px;
+  -moz-sborder-radius: 20px 0px 20px 0px;
+  border-radius: 20px 0px 20px 0px;
+  -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3); 
+  -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3); 
+  box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.3);     
+  transition 0.5s;   
+} 
+ul.sf-result > li:hover {
+  color: inherit;
+  border: 1px solid transparent; 
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -moz-sborder-radius: 0px 0px 0px 0px;  
+  border-radius: 0px 0px 0px 0px;
+}
+
+ul.sf-result > li:before {
+  box-sizing: border-box;
+  transform: translateX(100%);
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 99.5%;
+  height: 2px;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+}
+ul.sf-result > li:after { 
+  box-sizing: border-box;
+  transform: translateX(-100%);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 99.5%;
+  height: 2px;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
+ul.sf-result > li:hover:before {
+  transition: .1s transform linear, .1s height linear .1s;
+  transform: translateX(0);
+  height: 100%;
+  /*border-color: #1fbfac;*/
+}
+ul.sf-result > li:hover:after {
+  transition: .1s transform linear .2s, .1s height linear .3s;
+  transform: translateX(0);
+  height: 100%;
+  /*border-color: #1fbfac; */
+}
+
+ul.sf-result > li p{
+  margin: 10px;
+}
+
+
+/* 1 columna */
+@media (min-width: 220px) and  (max-width: 550px) { /*(max-width: 768px){ */
+  ul.sf-result > li{
+    margin: 0.8em 0;
+    float: left; 
+    width: 100%;
+    height: auto !important;
+  }  
+}
+/**/
+/* 2 columnas */
+@media /*(min-width: 769px)*/ (min-width: 551px) and (max-width: 989px){ 
+  ul.sf-result > li{
+    margin: 2% 0;
+    margin-right: 2%;
+    float: left; 
+    width: 49%;
+  } 
+
+  ul.sf-result > li:nth-child(2n){
+    margin-right: 0;
+  }
+
+  
+  ul.sf-result > li:nth-child(2n+1){
+    clear: both;
+  }
+}
+/* 3 columnas */
+@media (min-width: 990px) and (max-width: 1366px){ 
+  ul.sf-result > li{
+    margin: 2% 0;
+    margin-right: 2%;
+    float: left; 
+    width: 32%;
+  }
+
+  ul.sf-result > li:nth-child(3n){
+    margin-right: 0;
+  }
+
+  
+  ul.sf-result > li:nth-child(3n+1){
+    clear: both;
+  }
+}
+/*4 columnas */
+@media (min-width: 1367px) and (max-width: 1900px){ 
+  ul.sf-result > li{
+    margin: 2% 0;
+    margin-right: 2%;
+    float: left; 
+    width: 23.5%;
+  }
+
+  ul.sf-result > li:nth-child(4n){
+    margin-right: 0;
+  }
+
+  
+  ul.sf-result > li:nth-child(4n+1){
+    clear: both;
+  }
+}
+/**************** Paginación Busqueda **************/
+ul.sf-nav > li > .sf-nav-current, ul.sf-nav > li > .sf-nav-click, ul.sf-nav > li > .sf-nav-three-points{
+  width: 30px;
 }
 /**************** Pie de Página *******************/
 .ancla_inicio{
@@ -617,7 +891,12 @@ footer h2.block-title {
     border-bottom: 2px solid rgba(255, 255, 255, 0.08);
     margin-top: 0;
     margin-bottom: 0.2em;
-    font-size: 3em;
+    font-size: 2.1em;
+}
+@media (max-width: 460px){
+  .menu_footer_uno, .menu_footer_dos{
+    width: 100% !important;
+  }
 }
 @media (min-width: 769px){
 
@@ -665,3 +944,73 @@ footer h2.block-title {
   font-family: 'Montserrat', sans-serif;
   font-size: medium;
 }
+
+/************ Estilos del Formulario ************************/
+
+.form-submit input{
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; 
+}
+
+.ninja-forms-field, .comment-form-comment textarea, #commentform input[type="text"]{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+
+  .ninja-forms-field:focus, .comment-form-comment textarea:focus, 
+  .form-submit input:focus, #commentform textarea:focus, #commentform input:focus{
+    border-color: transparent;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+
+textarea.ninja-forms-field, .comment-form-comment textarea, .form-submit input, #commentform input  {
+    height: auto;
+    border-radius: 4px 4px 0 0;
+
+}
+.nf-field-element textarea {
+    height: 150px;
+}
+
+.nf-error .ninja-forms-field {
+    border: 1px solid rgba(255, 0, 0, 0.2);
+} 
+
+.nf-field-label label{
+    color: #219cd3;
+}
+.comment-form-comment{
+
+}
+.comment-form-comment label, #commentform label{
+  display: block;
+}
+
