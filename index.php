@@ -9,11 +9,11 @@
         <a title='audiovisuales' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"8","search-id":"principal"}'>
           <div class="iconos aa2 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
         </a>
-        <a title='creacion_digital' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"6","search-id":"principal"}'>
-          <div class="iconos aa3 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
-        </a>
         <a title='danza' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"2","search-id":"principal"}'>
           <div class="iconos aa4 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
+        </a>
+        <a title='teatro' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"5","search-id":"principal"}'>
+          <div class="iconos aa7 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
         </a>
         <a title='literatura' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"4","search-id":"principal"}'>
           <div class="iconos aa5 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
@@ -21,8 +21,8 @@
         <a title='musica' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"3","search-id":"principal"}'>
           <div class="iconos aa6 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
         </a>
-        <a title='teatro' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"5","search-id":"principal"}'>
-          <div class="iconos aa7 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
+        <a title='creacion_digital' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"6","search-id":"principal"}'>
+          <div class="iconos aa3 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
         </a>
         <!-- <div class="iconos aa8 col-xs-12 col-sm-6 col-md-1-7 col-lg-1-7"></div>                                                                      -->
       </div>            

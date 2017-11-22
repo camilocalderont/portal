@@ -43,7 +43,11 @@
                 )
 
               );
-            ?>          
+            ?>  
+
+          <p>
+
+          </p>        
 
   		</div>
 
@@ -62,9 +66,14 @@
 		      Horario de atención al público lunes a viernes 8:00am a 5:30pm<br>    
 
 		    </address>  
+ 
 
-		    <p><a href="http://idartes.gov.co/" target="_blank" title="Idartes"><img alt="" src="<?php bloginfo('template_url');?>/imagenes/logo_web_footer.png" style="height:133px; width:300px"></a></p>				
-
+        <p>
+            <a href="http://idartes.gov.co/" target="_blank" title="Idartes" id="enlace-alcaldia-footer"><img alt="" src="<?php bloginfo('template_url');?>/imagenes/menu/logo-alcaldia-header.png"></a>    
+            <a class="navbar-brand" id="enlace-crea" href="http://www.crea.gov.co/" target="_blank">
+              <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-crea-header.png" alt="Crea - Formación y Creación Artística"/>&nbsp;
+            </a>           
+        </p>    
   		</div>  		
 
   	</div>

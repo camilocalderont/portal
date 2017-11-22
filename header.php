@@ -30,9 +30,7 @@
             <a class="navbar-brand" id="enlace-portal" href="<?php echo get_home_url(); ?>" >
               <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-portal-header.png" alt="Portal de Contenidos" />&nbsp;
             </a>   
-            <a class="navbar-brand" id="enlace-crea" href="http://www.crea.gov.co/" target="_blank">
-              <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-crea-header.png" alt="Crea - Formación y Creación Artística"/>&nbsp;
-            </a>  
+ 
             <a class="navbar-brand" id="enlace-alcaldia" href="http://www.bogota.gov.co/" target="_blank">
               <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-alcaldia-header.png" alt="Alcaldía Mayor de Bogotá"/>&nbsp;
             </a>                

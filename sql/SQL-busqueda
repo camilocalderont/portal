@@ -1,0 +1,30 @@
+/**********  ENTRADAS POR CATEGORIAS CAMPOS PERSONALIZADOS ****************/
+SELECT
+
+  DISTINCT (PM.meta_value) AS 'valor' , PM.meta_key AS 'nombre', '0' AS 'es_categoria'
+  FROM portal_postmeta PM WHERE
+  PM.meta_key IN
+  (
+  SELECT 
+  DISTINCT(PM.meta_key) 
+  FROM portal_postmeta AS PM WHERE 
+  PM.meta_value<> 'taxonomy' AND PM.meta_value IS NOT NULL AND 
+  PM.meta_key NOT LIKE '%wp%' AND PM.meta_key NOT LIKE '%\_%' AND 
+  ASCII(LEFT(PM.meta_key, 1)) BETWEEN ASCII('A') AND ASCII('Z')
+  )
+  GROUP BY meta_value
+
+  UNION 
+  SELECT
+  C.name AS 'valor', 'categoria' AS 'nombre',  '1' AS 'es_categoria'
+  FROM portal_term_taxonomy AS CT
+  JOIN portal_terms AS C ON C.term_id=CT.term_id
+  WHERE CT.taxonomy='category' AND CT.count>0 
+  ;
+
+
+  /***************** CAMBIAR GENERO ********************/
+
+  UPDATE `portalcl_portal`.`portal_postmeta`
+SET   `meta_key` = 'Género'
+WHERE `meta_key` = 'Genero';

@@ -329,11 +329,11 @@ nav .nav{
       }                              
 }
 
-@media (max-width: 568px){
+/*@media (max-width: 568px){
       #enlace-crea{
         display: none !important;
       }    
-}
+}*/
 
 
 @media (max-width: 990px){
@@ -594,12 +594,12 @@ nav .nav{
 } 
 
 /*********** Campo de Busqueda *************************/
-.sf-filter  legend{
+.sf-filter  legend, .sf-filter span{
    color: white;
     font-weight: bold;      
 }
  
-.sf-element select, .sf-element .sf-fulltext-wrapper input {
+.sf-element select, .sf-element .sf-fulltext-wrapper input, #contenedor-texto-general .sf-fulltext-wrapper input{
     display: block;
     font-size: 14px;
     line-height: 1.42857143;
@@ -614,7 +614,7 @@ nav .nav{
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;   
 }
 
-.sf-element select:focus, .sf-element .sf-fulltext-wrapper input:focus
+.sf-element select:focus, .sf-element .sf-fulltext-wrapper input:focus,  #contenedor-texto-general .sf-fulltext-wrapper input:focus
 {
     border-color: transparent;
     outline: 0;
@@ -670,10 +670,14 @@ nav .nav{
   }
 
   .sf-filter >.sf-element {
-        max-width: 14% !important;
+        /*max-width: 14% !important;*/
         width: 14% !important;
         margin-right: 2% !important;
         float: left;
+  }
+  .sf-filter > #contenedor-texto-general{
+    width: 100%;
+    
   }
 }
 .sf-result h3{
@@ -912,6 +916,10 @@ footer h2.block-title {
   padding: 5px 0;
   text-transform: uppercase !important;
   transition: .5s;
+}
+
+#enlace-crea, #enlace-alcaldia-footer{
+  float: right;
 }
 
 /***************** Estilos del Mapa de Google **************************/
