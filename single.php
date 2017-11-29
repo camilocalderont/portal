@@ -25,7 +25,9 @@
 	<?php endwhile; else: ?>
 	<h2>No se encontro el Post</h2>
 	<?php endif; ?>
-	<div id="comentarios" class="row">
+
+	<div class="clearfix"></div>
+	<div id="comentarios" class="alternativo row">
 		
 		<div id="cajaComentarios" class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 			<h3>Comentarios</h3>

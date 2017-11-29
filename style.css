@@ -14,7 +14,8 @@ Text Domain: PortalCrea
 
 /*********** Fuentes **********/
 
-@import url('https://fonts.googleapis.com/css?family=Amatica+SC:700|Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Amatica+SC:700|Barlow+Semi+Condensed:500');
+
 
 @font-face {
       font-family: "Local Amatica SC Bold";
@@ -34,6 +35,8 @@ Text Domain: PortalCrea
 /********** Generales ***********/
 body{
       margin: 0 !important;
+      /*background: #FEF2DD !important; */
+      background: #ffffff !important;
       /*padding: 90px 0 0 0;*/ /*para que baje el Contenido en el inicio*/
 } 
 body span.ancla{
@@ -41,13 +44,15 @@ body span.ancla{
 }
 
 h1,h2,h3,h4,h5,h6, .titulo{
-      font-family: 'Amatica SC', cursive !important;     
-      letter-spacing: 1px; 
-      line-height: 1.1;
-      /*font-family: "Vincent Regular", cursive;*/
+  color: #01937C !important;
+  font-family: 'Amatica SC', cursive !important;     
+  letter-spacing: 1px; 
+  line-height: 1.1;
+  /*font-family: "Vincent Regular", cursive;*/
 }
 p{
-      font-family: 'Montserrat', sans-serif;
+      /*font-family: 'Montserrat', sans-serif;*/
+      font-family: 'Barlow Semi Condensed', sans-serif;
       font-size: medium;
       letter-spacing: 1px; 
       line-height: 1.42857143;     
@@ -60,6 +65,92 @@ hr.linea1{
   height: 13px;
   border-top: none; 
   background: url("imagenes/lineas-01.png") left top repeat-x;
+}
+
+#tituloPrincipal{
+  font-size: 45px;
+  text-align: center;
+  color: #005078 !important;
+  margin: 20px 0;
+}
+
+.armonico{
+  /*background: #01937C;*/
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e7388b+0,73368b+100 */
+  background: #e7388b; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #e7388b 0%, #73368b 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #e7388b 0%,#73368b 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #e7388b 0%,#73368b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7388b', endColorstr='#73368b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */  
+  color: #ffffff !important;
+}
+.armonico h1,.armonico h2,.armonico h3,.armonico h4,.armonico h5,.armonico h6, .armonico .titulo{
+  color: #ffffff !important;
+} 
+ 
+
+
+.complementario{
+  background: #ffc000;
+  color: #ffffff !important;
+}
+
+.alternativo{
+  /*background: #ffc000;*/
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#60b56e+0,00abe6+100 */
+  background: #60b56e; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #60b56e 0%, #00abe6 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #60b56e 0%,#00abe6 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #60b56e 0%,#00abe6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#60b56e', endColorstr='#00abe6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */   
+  /*background: #F5A71E;*/
+  color: #ffffff !important;
+}
+
+.complementario h1,.complementario h2,.complementario h3,.complementario h4,
+.complementario h5,.complementario h6, .complementario .titulo,
+.tituloCategoria h2,
+footer h1, footer h2,footer h3, footer h4, footer h5, footer h6,
+.alternativo h1, .alternativo h2,.alternativo h3, .alternativo h4, .alternativo h5, .alternativo h6 {
+  color: #ffffff !important;
+} 
+
+.titulo-otro{
+  background: #18BA90;
+}
+
+.titulo-complementario-izq{
+  background: /*#F5A71E; */ #005078;
+  padding: 0.5em 0 0.5em 20px;
+  position: relative;
+  left: -5%;
+  width: 105%;
+}
+
+.titulo-complementario-der{
+  text-align: right;
+  background: /*#F5A71E; */ #005078;
+  padding: 0.5em 20px 0.5em 0;
+  position: relative;
+  right: : -5%;
+  width: 105%;  
+}
+
+
+.amarillo-arriba{
+  height: 127px;
+  border-top: 0;
+  margin-bottom: 0; 
+  background: url("imagenes/seccion-amarilla-arriba.png") left top no-repeat;  
+  background-size: cover;
+}
+
+.amarillo-abajo{
+  height: 56px;
+  border-top: 0;
+  margin-top: 0;
+  background: url("imagenes/seccion-amarilla-abajo.png") left top no-repeat;  
+  background-size: cover;
 }
 
 /*********** Menu y Header *************/
@@ -87,7 +178,8 @@ header.row{
 
 .banner{
   /*background: #219cd3;*/
-  background: url("imagenes/banners/fondo_banner.png") center center no-repeat;
+  /*background: url("imagenes/banners/fondo_banner.png") center center no-repeat;*/
+  background: #ffffff; 
   background-size: cover;
 }
 
@@ -164,10 +256,11 @@ nav .nav{
 
 }   
 .nav  li  a{
-      color:  #525252 !important;
+      color:  #ffffff !important;
       background: transparent;
       text-shadow: 2px 3px 4px rgba(0,0,0,0.25);
-      transition: color 0.5s; /*Cambiar teniendo en cuenta el cambio de background con position*/
+      transition: 0.5s; /*Cambiar teniendo en cuenta el cambio de background con position*/
+      padding: 7px;
 }
 
 .nav  li,.nav  li{
@@ -176,17 +269,41 @@ nav .nav{
 }
 
 .nav  li  a:hover,.nav  li  a:active, .nav  li  a:focus{  
-
-      color: #bf2705 !important;   
-      background-color: transparent !important;
+      background-color: #005078 !important;
+      color: #ffffff !important;    
+      text-shadow: 2px 1px 1px rgba(0,0,0,0.8);
 } 
 
-.navbarra{     
-      border-color: transparent !important;
-      border-radius: 0px;
-      margin-bottom: 0px !important; 
-      transition: 0.5s;
+.header-menu{
+  transition: 0.5s;
 }
+ 
+.navbarra{   
+    /*background: #219cd3;*/
+    border-color: transparent !important;
+    border-radius: 0px;
+    margin-bottom: 0px !important; 
+    transition: 0.5s;
+}
+
+.navFixed{
+  background: #005078;
+  position: fixed !important;
+  z-index: 1001;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.navFixed .nav  li  a:hover,.navFixed .nav  li  a:active, .navFixed .nav  li  a:focus{  
+      background-color: #219cd3 !important;
+      color: #ffffff !important;    
+      text-shadow: 2px 1px 1px rgba(0,0,0,0.8);
+} 
+ 
+
+#menu > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+} 
 
 #showcase {
       height: 70vh;
@@ -365,9 +482,11 @@ nav .nav{
       position: fixed !important;
       top:90px;
       left:-100%;
-      z-index: 1000;         
+      z-index: 1000;     
+      color: #bf2705  !important;    
       background: rgba(33, 156, 211, 0.85);
     }  
+  
     #contenedorMenu a{ 
       color: #ffffff;
     }          
@@ -426,17 +545,18 @@ nav .nav{
     }
     .nav  li a.enlaceFixed:hover, .nav  li a.enlaceFixed:active, .nav  li a.enlaceFixed:focus {
       color: #bf2705  !important;
+
     }         
   }
 
-@media (min-width: 990px) and (max-width: 1900px){ 
+@media (min-width: 990px) and (max-width: 2500px){ 
     #contenedorMenu{
       width: 100%;
-      height: 70px;
-      position: inherit !important; 
+      height: 60px;
+      position: inherit; 
       border-radius: 0px !important;
-      border-bottom: none !important;   
-      background-color: transparent;        
+      border-bottom: none !important; 
+      background: #219cd3;          
     }    
     #contenedorMenu a{
       color: #525252;
@@ -445,19 +565,22 @@ nav .nav{
       height: 90px;    
     }    
     .navFixed{
-      background: #219cd3;
+      background: #005078 !important;  
+
     }
     .nav  li a.enlaceFixed{
       color: #ffffff  !important;
     }
     .nav  li a.enlaceFixed:hover, .nav  li a.enlaceFixed:active, .nav  li a.enlaceFixed:focus {
-      color: #bf2705  !important;
+      background: #219cd3 !important;
+      text-shadow: 2px 1px 1px rgba(255,255,255,0.8);
     }      
     /*.nav  li  a{
       color: #fff !important;
     } */            
     .nav  li  a:hover,.nav  li  a:active, .nav  li  a:focus{      
-          background: transparent url("imagenes/menu/linea.png") center 100% no-repeat;
+          /*background: transparent url("imagenes/menu/linea.png") center 100% no-repeat;*/
+          background: #005078; 
     }  
     #menu_responsive{
       display: none;             
@@ -591,15 +714,72 @@ nav .nav{
     width: 20%;
   }  
 
-} 
+}  
 
 /*********** Campo de Busqueda *************************/
+
+
+
+
 .sf-filter  legend, .sf-filter span{
    color: white;
     font-weight: bold;      
 }
+
+.sf-elemento{
+  border: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.sf-elemento:nth-of-type(2n){
+  margin-right: 0;
+}
+
+.sf-elemento:nth-of-type(2n+1):before{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.sf-elemento legend{
+  font-size: 10px;
+  margin-bottom: 3px;
+}
+
+.sf-elemento input,
+.sf-elemento select{
+  width: 100%;
+  height: 25px;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #cacaca;
+}
+
+.sf-elemento input[type="checkbox"],
+.sf-elemento input[type="radio"]{
+  width: 10px;
+  height: 10px;
+}
+
+.sf-elemento.map{
+  width: 100%;
+}
+
+.sf-elemento .badge{
+  margin-left: 7px;
+  background: #0ca9ae;
+}
  
-.sf-element select, .sf-element .sf-fulltext-wrapper input, #contenedor-texto-general .sf-fulltext-wrapper input{
+.sf-element select, 
+.sf-element .sf-fulltext-wrapper input, 
+.sf-elemento select, 
+.sf-elemento .sf-fulltext-wrapper input{
     display: block;
     font-size: 14px;
     line-height: 1.42857143;
@@ -614,7 +794,11 @@ nav .nav{
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;   
 }
 
-.sf-element select:focus, .sf-element .sf-fulltext-wrapper input:focus,  #contenedor-texto-general .sf-fulltext-wrapper input:focus
+.sf-element select:focus, 
+.sf-element .sf-fulltext-wrapper input:focus,
+.sf-elemento select:focus, 
+.sf-elemento .sf-fulltext-wrapper input:focus
+
 {
     border-color: transparent;
     outline: 0;
@@ -626,7 +810,7 @@ nav .nav{
     .sf-filter{
       width: 100%;
       height: auto;
-      padding: 0 10px 100px 10px;
+      padding: 0 10px 100px 10px;      
       position: fixed !important;
       top:90px;
       right:-100%;
@@ -664,6 +848,7 @@ nav .nav{
         width: 100%;
         /*background: #bbbbbb !important;*/
         padding: 0.7em;
+        margin-top: 20px;
         border-radius: 20px 0px 20px 0px;
         -moz-border-radius: 20px 0px 20px 0px;
         -webkit-border-radius: 20px 0px 20px 0px;
@@ -675,10 +860,7 @@ nav .nav{
         margin-right: 2% !important;
         float: left;
   }
-  .sf-filter > #contenedor-texto-general{
-    width: 100%;
-    
-  }
+
 }
 .sf-result h3{
       display: table;
@@ -834,7 +1016,7 @@ ul.sf-result > li p{
   }
 }
 /*4 columnas */
-@media (min-width: 1367px) and (max-width: 1900px){ 
+@media (min-width: 1367px) and (max-width: 2500px){ 
   ul.sf-result > li{
     margin: 2% 0;
     margin-right: 2%;
@@ -870,7 +1052,7 @@ ul.sf-nav > li > .sf-nav-current, ul.sf-nav > li > .sf-nav-click, ul.sf-nav > li
 }
 
 .header-footer{
-       background: url("imagenes/footer_arriba.png") bottom center no-repeat;
+       /*background: url("imagenes/footer_arriba.png") bottom center no-repeat;*/
        background-size: contain;
        height: 106px;
 }
@@ -1013,7 +1195,11 @@ textarea.ninja-forms-field, .comment-form-comment textarea, .form-submit input, 
 } 
 
 .nf-field-label label{
-    color: #219cd3;
+    color: #ffffff;
+    text-shadow: 2px 1px 1px rgba(0,0,0,0.4);
+}
+.label-above .nf-field-label{
+  margin-bottom: 2px;
 }
 .comment-form-comment{
 
@@ -1022,3 +1208,27 @@ textarea.ninja-forms-field, .comment-form-comment textarea, .form-submit input, 
   display: block;
 }
 
+.nf-error-msg, .nf-error-required-error{
+  color: #18BA90 !important;
+  text-shadow: 0px 0px 3px #ffffffdb;
+}
+.nf-error .ninja-forms-field{
+    border: 1px solid #18BA90 !important;
+}
+
+.nf-field-element textarea {
+    height: 100px !important;
+}
+
+#ninja_forms_required_items, .nf-field-container {
+    clear: both;
+    position: relative;
+    margin-bottom: 5px !important; 
+}
+.nf-help {
+  background: transparent !important;
+}
+
+.footer-color{
+  background-color: #005078 !important;
+}

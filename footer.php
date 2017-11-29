@@ -6,77 +6,87 @@
 
   	<div class="container">
 
-  		<div class="menu_footer_uno col-md-3 col-xs-6 col-sm-6">
+      <div class="row">
+    		<div class="menu_footer_uno col-md-3 col-xs-6 col-sm-6">
 
-  			<h2 class="block-title">Menú principal</h2>
+    			<h2 class="block-title">Menú principal</h2>
 
-          	<?php wp_nav_menu(
+            	<?php wp_nav_menu(
 
-          		array(
+            		array(
 
-          			'container'=>false,
+            			'container'=>false,
 
-          			'items_wrap'=>'<ul class="menu-bottom">%3$s</ul>',
+            			'items_wrap'=>'<ul class="menu-bottom">%3$s</ul>',
 
-          			'theme_location'=>'menu_footer_uno'
+            			'theme_location'=>'menu_footer_uno'
 
-          			)
+            			)
 
-          		);
-          	?>  			
+            		);
+            	?>  			
 
-  		</div>
+    		</div>
 
-  		<div class="menu_footer_dos col-md-3 col-xs-6 col-sm-6">
+    		<div class="menu_footer_dos col-md-3 col-xs-6 col-sm-6">
 
-  			<h2 class="block-title">NOSOTROS</h2>
-            <?php wp_nav_menu(
+    			<h2 class="block-title">NOSOTROS</h2>
+              <?php wp_nav_menu(
 
-              array(
+                array(
 
-                'container'=>false,
+                  'container'=>false,
 
-                'items_wrap'=>'<ul class="menu-bottom">%3$s</ul>',
+                  'items_wrap'=>'<ul class="menu-bottom">%3$s</ul>',
 
-                'theme_location'=>'menu_footer_dos'
+                  'theme_location'=>'menu_footer_dos'
 
-                )
+                  )
 
-              );
-            ?>  
+                );
+              ?>  
 
-          <p>
+            <p>
 
-          </p>        
+            </p>        
 
-  		</div>
+    		</div>
 
-  		<div class="col-md-6 col-xs-12 col-sm-12"> 	
+    		<div class="col-md-6 col-xs-12 col-sm-12"> 	
 
-  			<h2 class="block-title">CONTÁCTANOS</h2>
+    			<h2 class="block-title">CONTÁCTANOS</h2>
 
-		    <address>		     
+  		    <address>		     
 
-		      <strong>Dirección Carrera 8 # 15 - 46</strong><br>
+  		      <strong>Dirección Carrera 8 # 15 - 46</strong><br>
 
-		      Teléfono (571) - 3795750<br>
+  		      Teléfono (571) - 3795750<br>
 
-		      Email <a href="mailto:#">contactenos@idartes.gov.co</a><br>
+  		      Email <a href="mailto:#">contactenos@idartes.gov.co</a><br>
 
-		      Horario de atención al público lunes a viernes 8:00am a 5:30pm<br>    
+  		      Horario de atención al público lunes a viernes 8:00am a 5:30pm<br>    
 
-		    </address>  
- 
+  		    </address>  
+   
 
-        <p>
-            <a href="http://idartes.gov.co/" target="_blank" title="Idartes" id="enlace-alcaldia-footer"><img alt="" src="<?php bloginfo('template_url');?>/imagenes/menu/logo-alcaldia-header.png"></a>    
-            <a class="navbar-brand" id="enlace-crea" href="http://www.crea.gov.co/" target="_blank">
-              <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-crea-header.png" alt="Crea - Formación y Creación Artística"/>&nbsp;
-            </a>           
-        </p>    
-  		</div>  		
-
-  	</div>
+  
+    		</div>  		
+      </div>
+    </div>
+    <div class="row footer-color">
+      <div class="container">
+        <div class="col-md-3 col-xs-6 col-sm-6"></div>
+        <div class="col-md-3 col-xs-6 col-sm-6"></div>
+        <div class="col-md-6 col-xs-12 col-sm-12">
+            <p>
+              <a href="http://idartes.gov.co/" target="_blank" title="Idartes" id="enlace-alcaldia-footer"><img alt="" src="<?php bloginfo('template_url');?>/imagenes/menu/logo-alcaldia-header.png"></a>    
+              <a class="navbar-brand" id="enlace-crea" href="http://www.crea.gov.co/" target="_blank">
+                <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-crea-header.png" alt="Crea - Formación y Creación Artística"/>&nbsp;
+              </a>           
+          </p>          
+        </div>
+      </div>
+    </div>
 
 
 

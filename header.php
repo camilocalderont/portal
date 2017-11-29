@@ -25,25 +25,6 @@
 <body>
   <header class="row">
     <span class="ancla" id="inicio"></span>
-    <div class="banner">
-      <div class="container">
-            <a class="navbar-brand" id="enlace-portal" href="<?php echo get_home_url(); ?>" >
-              <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-portal-header.png" alt="Portal de Contenidos" />&nbsp;
-            </a>   
- 
-            <a class="navbar-brand" id="enlace-alcaldia" href="http://www.bogota.gov.co/" target="_blank">
-              <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-alcaldia-header.png" alt="Alcaldía Mayor de Bogotá"/>&nbsp;
-            </a>                
-            <div class="social">
-            <a  class="icono" href="https://www.facebook.com/creaidartes/" target="_blank">
-              <img src="<?php bloginfo('template_url');?>/imagenes/menu/sociales-02.png" alt="Facebook de Crea - Formación y Creación Artística"/>&nbsp;
-            </a>  
-            <a  class="icono" href="https://twitter.com/CreaIdartes" target="_blank">
-              <img src="<?php bloginfo('template_url');?>/imagenes/menu/sociales-03.png" alt="Twitter de Crea - Formación y Creación Artística"/>&nbsp;
-            </a>                            
-            </div>             
-      </div>
-    </div>
     <div id="menu_responsive">         
       <button id="boton_menu">        
         <span class="linea"></span>
@@ -51,7 +32,7 @@
         <span class="linea"></span>
       </button>
     </div>
-    <div id="contenedorMenu">
+    <div id="contenedorMenu" class="header-menu">
       <nav class="navbarra" role="navigation">
         <div class="container">
             	<?php wp_nav_menu(
@@ -66,10 +47,33 @@
         </div>
       </nav>
     </div>
+    <div class="banner">
+      <div class="container">
+            <!--<a class="navbar-brand" id="enlace-portal" href="<?php //echo get_home_url(); ?>" >
+              <img src="<?php //bloginfo('template_url');?>/imagenes/menu/logo-portal-header.png" alt="Portal de Contenidos" />&nbsp;
+            </a>-->   
+            <div class="col-md-3 col-lg-3">            
+              <a class="navbar-brand" id="enlace-alcaldia" href="http://www.bogota.gov.co/" target="_blank">
+                <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-alcaldia.png" alt="Alcaldía Mayor de Bogotá"/>&nbsp;
+              </a>    
+            </div>
+            <div class="col-md-8 col-lg-8">
+            <h1 id='tituloPrincipal'>TALENTO CREA</h1>            
+            </div>
+            <div class="social col-md-1 col-lg-1">
+              <a  class="icono" href="https://www.facebook.com/creaidartes/" target="_blank">
+                <img src="<?php bloginfo('template_url');?>/imagenes/menu/sociales-02.png?v=10" alt="Facebook de Crea - Formación y Creación Artística"/>&nbsp;
+              </a>  
+              <a  class="icono" href="https://twitter.com/CreaIdartes" target="_blank">
+                <img src="<?php bloginfo('template_url');?>/imagenes/menu/sociales-04.png" alt="Twitter de Crea - Formación y Creación Artística"/>&nbsp;
+              </a>                            
+            </div>             
+      </div>
+    </div>   
     <div class="row header-bg hidden">
       <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
         <div id="header-texto"></div>
         <div id="header-icono"></div> 
       </div>
-    </div>
+    </div>     
   </header>

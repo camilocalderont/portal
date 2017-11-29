@@ -28,3 +28,7 @@ SELECT
   UPDATE `portalcl_portal`.`portal_postmeta`
 SET   `meta_key` = 'Género'
 WHERE `meta_key` = 'Genero';
+
+  UPDATE `portalcl_portal`.`portal_postmeta`
+SET   `meta_key` = 'Estudiante(s)'
+WHERE `meta_key` = 'Participante(s)';

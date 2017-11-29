@@ -1,20 +1,37 @@
 jQuery(document).ready(function($){
 
+ 	$('[data-toggle="tooltip"]').tooltip();   
 	//Header con Scroll 
  
-
-  	$('.navbarra').scrollToFixed({
+  	/*$('.navbarra').scrollToFixed({ 
         preFixed: function() { 
+        	console.log("entra pre");
         	$(this).addClass('navFixed');
         	$('#menu-top').children('li').children('a').addClass('enlaceFixed');
         	
         }, 
         postFixed: function() { 
+        	console.log("entra post");
         	$(this).removeClass('navFixed');
 			$('#menu-top').children('li').children('a').removeClass('enlaceFixed');
 
         }
-    }); 
+    }); */
+
+	$( window ).scroll(function() {
+
+		var top = $(this).scrollTop() // Get position of the body
+		//console.log(' window top: '+top); 
+		if(top>0)
+		{
+			$('#contenedorMenu').addClass('navFixed');
+		  //body.animate({scrollTop:0}, '500');
+		  //console.log('top: '+top); 
+		}  
+		else{
+			$('#contenedorMenu').removeClass('navFixed');
+		}  
+	});    
 
 	//Añadir efecto Espejo a imagenes Carousel, se elimina de la propia Api
 	$(".imagenCategoria img").reflect();
@@ -190,8 +207,7 @@ jQuery(document).ready(function($){
 		});	
 	}
 
-	else
-		$('a[href="#inicio"]').trigger("click");
+	//else 		$('a[href="#inicio"]').trigger("click");
 
 	//Redireccionar cuando el ancla no esta en el inicio, o hacer Scroll en caso contrario
 	$('.menu-item > a[href*="#"]').click(function(){
@@ -298,3 +314,4 @@ jQuery(document).ready(function($){
 
 
 });
+ 

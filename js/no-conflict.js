@@ -1,1 +1,1 @@
-var $ = jQuery.noConflict(true);
+//var $ = jQuery.noConflict(true);

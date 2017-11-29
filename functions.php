@@ -96,25 +96,47 @@ function portal_cargar_scripts()
     // or
     // Register the script like this for a theme:
     //wp_enqueue_script('jquery');
-    wp_register_script( 'bootstrap-script',  'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',array(),false,true);
-    wp_register_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js',array(),false,true);
+    //wp_register_script( 'jquery-internet',  'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',array(),false,true);
+    /*wp_register_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js',array('jquery'),false,true);
      //wp_register_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ) ,false,true);
     //wp_register_script($handle, $src, $deps = array(), $ver = false, $in_footer = false )
-    wp_register_script( 'no-conflict', get_template_directory_uri() . '/js/no-conflict.js',array(),false,true);
-    wp_register_script( 'reflection', get_template_directory_uri() . '/js/jquery.reflection.js',array(),false,true);
-    wp_register_script( 'carousel', get_template_directory_uri() . '/js/jquery.cloud9carousel.js',array(),false,true);   
-    wp_register_script( 'jquery-scrollto', get_template_directory_uri() . '/js/jquery.scrollTo.js',array(),false,true);
-    wp_register_script( 'jquery-scrolltofixed', get_template_directory_uri() . '/js/jquery-scrolltofixed-min.js',array(),false,true); 
-    wp_register_script( 'portal', get_template_directory_uri() . '/js/portal.js',array(),false,true);
+    wp_register_script( 'no-conflict', get_template_directory_uri() . '/js/no-conflict.js',array('jquery'),false,true);
+    wp_register_script( 'reflection', get_template_directory_uri() . '/js/jquery.reflection.js',array('jquery'),false,true);
+    wp_register_script( 'carousel', get_template_directory_uri() . '/js/jquery.cloud9carousel.js',array('jquery'),false,true);   
+    wp_register_script( 'jquery-scrollto', get_template_directory_uri() . '/js/jquery.scrollTo.js',array('jquery'),false,true);
+    wp_register_script( 'jquery-scrolltofixed', get_template_directory_uri() . '/js/jquery-scrolltofixed-min.js',array('jquery'),false,true); 
+    wp_register_script( 'portal', get_template_directory_uri() . '/js/portal.js',array('jquery'),false,true);
     wp_register_script( 'ie-emulation', get_template_directory_uri() . '/js/ie-emulation-modes-warning.js',array(),false,true);
-    wp_enqueue_script( 'bootstrap-script' );  
+    //wp_enqueue_script( 'jquery-internet');   
+    wp_enqueue_script( 'bootstrap-script');  
     wp_enqueue_script( 'no-conflict' );   
     wp_enqueue_script( 'reflection' ); 
     wp_enqueue_script( 'carousel' ); 
     wp_enqueue_script( 'jquery-scrollto');      
     wp_enqueue_script( 'jquery-scrolltofixed');       
     wp_enqueue_script( 'portal' );
-    wp_enqueue_script( 'ie-emulation' );  
+    wp_enqueue_script( 'ie-emulation' );  */
+
+  
+    wp_register_script( 'no-conflict', get_template_directory_uri() . '/js/no-conflict.js',array('jquery'),false,false);
+    wp_register_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js',array('jquery'),false,false);
+    wp_register_script( 'reflection', get_template_directory_uri() . '/js/jquery.reflection.js',array('jquery'),false,false);
+    wp_register_script( 'carousel', get_template_directory_uri() . '/js/jquery.cloud9carousel.js',array('jquery'),false,false);   
+    wp_register_script( 'jquery-scrollto', get_template_directory_uri() . '/js/jquery.scrollTo.js',array('jquery'),false,false);
+    wp_register_script( 'jquery-scrolltofixed', get_template_directory_uri() . '/js/jquery-scrolltofixed-min.js',array('jquery'),false,false);  
+    wp_register_script( 'portal', get_template_directory_uri() . '/js/portal.js',array('jquery'),false,false);
+    wp_register_script( 'busqueda', get_template_directory_uri() . '/js/busqueda.js',array('jquery'),false,false);
+    wp_register_script( 'ie-emulation', get_template_directory_uri() . '/js/ie-emulation-modes-warning.js',array(),false,false);
+    wp_enqueue_script( 'no-conflict' );   
+    wp_enqueue_script( 'bootstrap-script' );   
+    wp_enqueue_script( 'reflection' ); 
+    wp_enqueue_script( 'carousel' ); 
+    wp_enqueue_script( 'jquery-scrollto');      
+    wp_enqueue_script( 'jquery-scrolltofixed');        
+    wp_enqueue_script( 'portal' );
+    wp_enqueue_script( 'busqueda' ); 
+    wp_enqueue_script( 'ie-emulation' );   
+
 }
 add_action( 'wp_enqueue_scripts', 'portal_cargar_scripts' );
 
@@ -141,5 +163,83 @@ function portal_cargar_estilos()
 add_action('wp_enqueue_scripts','portal_cargar_estilos');
 
 
+
+/*function checkUser() {
+
+    $userid = $_POST['user']; //validation also :)
+    $oMySQL = new MySQL();
+    $query = "Select * FROM videotable WHERE uid = '$userid'";
+    $oMySQL->ExecuteSQL($query);
+    $bb = $oMySQL->iRecords;
+    $aa = $oMySQL->aResult;
+    echo $bb;
+
+    if ($bb == 0){
+    $query = "INSERT INTO videotable VALUES ('','$userid','true')";
+    $oMySQL->ExecuteSQL($query);
+    echo 'true';
+        exit();
+
+    } else {
+    $sharing = mysql_result($aa,0,"share");
+    echo $sharing;
+    exit();
+
+    }
+}*/
+
+add_action('wp_head','ajaxurl');
+function ajaxurl() {
+?>
+<script type="text/javascript">
+var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+</script>
+<?php
+}
+
+add_action('wp_ajax_busqueda', 'busqueda');
+add_action('wp_ajax_nopriv_busqueda', 'busqueda');
+
+function busqueda(){
+    $datos=$_POST['campos'];
+    echo print_r($_POST,true);
+    $selectOrderBy="";
+    $orderBy="";
+    $where="";
+    $having="";
+    global $wpdb;
+    foreach ($datos as $campo) {
+        # code...
+        if($campo["campo"]=="order-by"){
+            if($campo["valor"]=="Puntaje"){
+                $selectOrderBy=",(SELECT AVG(PR.rating_rating) FROM portal_ratings AS PR WHERE PR.rating_postid=P.ID) AS 'puntaje'";
+                $orderBy="ORDER BY puntaje DESC";
+            }else{ //Visitas
+                $selectOrderBy="(SELECT SUM(PV.page_visit) FROM portal_page_visit AS PV WHERE PV.page_id=P.ID) AS 'visitas'";
+                $orderBy="ORDER BY visitas DESC";
+            }
+        }else{
+            if($campo['categoria']){
+                $where=" AND TR.term_taxonomy_id=".$campo['valor'];
+            }
+            else{
+                if($having=="")
+                    $having=" HAVING SUM(FIND_IN_SET(PM.meta_key,'".$campo['campo']."')) > 0  AND SUM(PM.meta_value=".$campo['valor'].") > 0  ";  
+                else 
+                    $having=" AND SUM(FIND_IN_SET(PM.meta_key,'".$campo['campo']."')) > 0 AND SUM(PM.meta_value=".$campo['valor'].") > 0  ";  
+            }
+        } 
+    }
+
+    $sql="  SELECT P.* ".$selectOrderBy."
+            FROM portal_posts AS P
+            JOIN portal_postmeta AS PM ON PM.post_id=P.ID
+            JOIN portal_term_relationships AS TR ON TR.object_id=P.ID
+            WHERE P.post_type='post' ".$where."
+            GROUP BY P.ID ".$having." ".$orderBy.";";
+    echo $sql;            
+    //$posts= $wpdb->get_results( $sql, OBJECT );    
+    //echo print_r($_POST,true);
+}
 
 ?>

@@ -1,45 +1,36 @@
 <?php
   global $wpdb;
-  $sql="SELECT
+  $sql="
+  SELECT
+  C.name AS 'valor', C.term_id AS 'codigo' 'Área' AS 'nombre',  '1' AS 'es_categoria'
+  FROM ".$wpdb->prefix."term_taxonomy AS CT
+  JOIN ".$wpdb->prefix."terms AS C ON C.term_id=CT.term_id
+  WHERE CT.taxonomy='category' AND CT.count>0 
+  UNION
 
-  DISTINCT (PM.meta_value) AS 'valor' , PM.meta_key AS 'nombre', '0' AS 'es_categoria'
+  SELECT
+
+  DISTINCT (PM.meta_value) AS 'valor' , '' AS 'codigo', PM.meta_key AS 'nombre', '0' AS 'es_categoria'
   FROM ".$wpdb->prefix."postmeta PM WHERE
   PM.meta_key IN
   (
-  SELECT 
+  SELECT   
   DISTINCT(PM.meta_key) 
   FROM ".$wpdb->prefix."postmeta AS PM WHERE 
   PM.meta_value<> 'taxonomy' AND PM.meta_value IS NOT NULL AND 
   PM.meta_key NOT LIKE '%wp%' AND PM.meta_key NOT LIKE '%\_%' AND 
   ASCII(LEFT(PM.meta_key, 1)) BETWEEN ASCII('A') AND ASCII('Z')
   )
-  GROUP BY meta_value
-
-  UNION 
-  SELECT
-  C.name AS 'valor', 'categoria' AS 'nombre',  '1' AS 'es_categoria'
-  FROM ".$wpdb->prefix."term_taxonomy AS CT
-  JOIN ".$wpdb->prefix."terms AS C ON C.term_id=CT.term_id
-  WHERE CT.taxonomy='category' AND CT.count>0 
+  GROUP BY meta_value 
   ;";
   $results = $wpdb->get_results( $sql, OBJECT );
   $campos=array();
-
+  $campos_visibles = array('Estudiante(s)','Crea','Área');
   foreach ($results as $clave => $valor) {
     //$campos[$valor->nombre]= array('items'=>array(),'es_categoria'=>$valor->es_categoria);
     $campos[$valor->nombre]['items'][]=$valor->valor;
     $campos[$valor->nombre]['es_categoria']=$valor->es_categoria;
-    # code...
   }
-  //No mostar Campos que no se van a usar
-  if(isset($campos['Año']))
-  unset($campos['Año']);  
-  
-  if(isset($campos['Código']))
-  unset($campos['Código']);  
-
-  if(isset($campos['Participante(s)']))
-  unset($campos['Participante(s)']);   
       
   $table_name = $wpdb->prefix.'page_visit';
   if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") == $table_name)
@@ -69,22 +60,31 @@
           <?php 
           
           //echo '<pre>'.print_r($results).'</pre>';  
-          $legend="";
-          $elementos =1;
-
+          
           foreach ($campos as $clave => $valor) {
-            if(sizeof($valor['items'])<=35){
-              $elementos++;
-              echo "<fieldset class='sf-element select busqueda_elemento'>";
-              echo "  <legend>".$clave."</legend>";
-              echo "  <select class='".$clave."'>"; 
-              echo "    <option ='T'>Todos</option>";
-              foreach ($valor["items"] as $key => $value) {
-                echo "    <option ='".$value."'>".$value."</option>";
+            if(in_array($clave, $campos_visibles)){
+
+              if(sizeof($valor['items'])<=35){              
+                $elementos++;              
+                echo "<fieldset class='sf-elemento select col-xs-12 col-sm-6 col-md-2 col-lg-2'>";
+                echo "  <legend>".$clave."<span class='badge' data-toggle='tooltip' data-placement='top' title='Busca talento por ". $clave."' ><span class='fa fa-info'></span></span></legend>"; 
+                echo "  <select data-busqueda='".$clave."' data-categoria='".$valor["es_categoria"]."' class='campo-busqueda'>"; 
+                echo "    <option ='Todos'>Todos</option>";
+                foreach ($valor["items"] as $key => $value) {
+                  echo "    <option ='".$value."'>".$value."</option>";
+                }
+                echo "  </select>";
+                echo "</fieldset>";
               }
-              echo "  </select>";
-              echo "</fieldset>";
-            }   
+              else{
+                echo "<fieldset class='sf-elemento fulltext col-xs-12 col-sm-6 col-md-2 col-lg-2' >";
+                echo "  <legend>".$clave." <span class='badge' data-toggle='tooltip' data-placement='top' title='Busca talento por ". $clave."' ><span class='fa fa-info'></span></span></legend>";
+                echo "<div class='sf-fulltext-wrapper'>
+                        <input placeholder='".$clave."' data-busqueda='".$clave."' data-categoria='".$valor["es_categoria"]."' class='campo-busqueda'>
+                      </div>";
+                echo "</fieldset>";  
+              }   
+            }
             else{
               if($legend=="")
                 $legend=$clave;
@@ -92,16 +92,23 @@
                 $legend.=",".$clave;
             }           
           }
-              echo "<fieldset id='contenedor-texto-general' class='sf-element fulltext busqueda_elemento' >";
-              echo "  <legend>". /*$legend.*/"Busqueda General</legend>";
+              echo "<fieldset id='contenedor-texto-general' class='sf-elemento fulltext col-xs-12 col-sm-6 col-md-5 col-lg-5' >";
+              echo "  <legend>Busqueda General <span class='badge' data-toggle='tooltip' data-placement='top' title='Intenta buscar por ". $legend."'><span class='fa fa-info'></span></span></legend>";
               echo "<div class='sf-fulltext-wrapper'>
-                      <input placeholder='". $legend."' class='texto-general' data-busqueda='". $legend."'>
+                      <input placeholder='Encuentra más contenidos'  data-busqueda='". $legend."' data-categoria='".$valor["es_categoria"]."' class='campo-busqueda texto-general'>
                     </div>";
-              echo "</fieldset>";    
-              //echo 'elementos: '.$elementos;
-              if($elementos>0)
-              $ancho=(100/$elementos)-2;
-              echo "<style>.sf-filter > .busqueda_elemento{width:".$ancho."% !important;}</style>"          
+              echo "</fieldset>";  
+
+              echo "<fieldset  class='sf-elemento fulltext col-xs-12 col-sm-6 col-md-1 col-lg-1'>";
+              echo "  <legend>Ordenar por</legend>";
+              echo "  <select id='order-by' class='campo-busqueda' data-busqueda='order-by'>"; 
+              echo "    <option ='Todos'>Todos</option>";
+              if($hay_plugin_ratings)
+              echo "    <option ='P'>Puntaje</option>";
+              if($hay_plugin_visitas)
+              echo "    <option ='V'>Visitas</option>";            
+              echo "  </select>";
+            
           ?> 
         </div> 
       </div>    
@@ -144,19 +151,19 @@ jQuery(document).ready(function(e){
           id_imagen=0; 
         }
         if(id_imagen==2) //Danza
-          background="#eb5f46"; 
+          background="#00A19A"; 
         else if(id_imagen==3) //Música
-          background="#615da7";
+          background="#871628";
         else if(id_imagen==4) //Literatura
-          background="#6cbb7a";  
+          background="#064150";  
         else if(id_imagen==5) //Teatro
-          background="#c5d62e"; 
+          background="#96BE1F"; 
         else if(id_imagen==6) //Creación Digital
-          background="#ffc200"; 
+          background="#F5A71E"; 
         else if(id_imagen==7) //Artes Plásticas
-          background="#1fbad8"; 
+          background="#2184C6"; 
         else if(id_imagen==8) //Audiovisuales
-          background="#eb597d";   
+          background="#522671";   
         var fondoContenidos=".sf-result li a h3{ color: "+background+" !important;} ul.sf-result > li:hover:before, ul.sf-result > li:hover:after{ border-color: "+background+";}";  
         //console.log(fondoContenidos.length);
         

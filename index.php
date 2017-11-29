@@ -1,33 +1,5 @@
 <?php get_header(); ?>
-  <div class="GaleriaPie">
-    <div class="row"> 
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-        <a title='artes_plasticas' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"7","search-id":"principal"}'>
-          <div class="iconos aa1 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
-        </a>
-        <a title='audiovisuales' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"8","search-id":"principal"}'>
-          <div class="iconos aa2 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
-        </a>
-        <a title='danza' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"2","search-id":"principal"}'>
-          <div class="iconos aa4 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
-        </a>
-        <a title='teatro' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"5","search-id":"principal"}'>
-          <div class="iconos aa7 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
-        </a>
-        <a title='literatura' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"4","search-id":"principal"}'>
-          <div class="iconos aa5 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
-        </a>
-        <a title='musica' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"3","search-id":"principal"}'>
-          <div class="iconos aa6 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
-        </a>
-        <a title='creacion_digital' href='<?= get_home_url(); ?>/busqueda/#sf-{"1":"6","search-id":"principal"}'>
-          <div class="iconos aa3 col-xs-1-7 col-sm-1-7 col-md-1-7 col-lg-1-7 "></div>
-        </a>
-        <!-- <div class="iconos aa8 col-xs-12 col-sm-6 col-md-1-7 col-lg-1-7"></div>                                                                      -->
-      </div>            
-    </div>
-  </div>                
+               
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
@@ -98,19 +70,19 @@ en acción teatral.</span>
       </div>    
     </div>                   
   </div>      
-  <hr class="linea1">
-  <div class="row">
+  <hr>
+  <div class="armonico row">
     <span class="ancla" id="portal"></span><br><br>
-    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
+    <div class=" col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
       <?php if ( is_active_sidebar( 'quienes_somos' ) ) : ?>        
           <?php dynamic_sidebar( 'quienes_somos' ); ?>        
       <?php endif; ?>   
     </div>
   </div>
-  <hr class="linea1">
-  <div class="row">
+  <hr>
+  <div class="alternativo row">
     <span class="ancla" id="nuestrosCrea"></span><br><br>
-    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
+    <div class="  col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
       <h2 class="titulo">Encuentre su CREA más cercano</h2>
       <?php if ( is_active_sidebar( 'donde_estamos' ) ) : ?>
         <div id="donde-estamos">
@@ -120,7 +92,8 @@ en acción teatral.</span>
     </div> 
   </div>
   <hr>
-  <div class="row">
+  <hr class="amarillo-arriba">
+  <div class="complementario row">
     <span class="ancla" id="contactenos"></span><br><br><br><br>
     <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
       <h2  class="titulo">Contáctanos</h2>
@@ -131,5 +104,6 @@ en acción teatral.</span>
       <?php endif; ?>   
     </div>
   </div>
+  <hr class="amarillo-abajo">
 <?php //get_sidebar(); ?>
 <?php get_footer(); ?>
