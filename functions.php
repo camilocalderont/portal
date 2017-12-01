@@ -7,9 +7,9 @@
  */
 
 // Remove WP Version From Styles    
-add_filter( 'style_loader_src', 'sdt_remove_ver_css_js', 9999 );
+//add_filter( 'style_loader_src', 'sdt_remove_ver_css_js', 9999 );
 // Remove WP Version From Scripts
-add_filter( 'script_loader_src', 'sdt_remove_ver_css_js', 9999 );
+//add_filter( 'script_loader_src', 'sdt_remove_ver_css_js', 9999 ); 
 
 // Function to remove version numbers
 function sdt_remove_ver_css_js( $src ) {
@@ -20,21 +20,44 @@ function sdt_remove_ver_css_js( $src ) {
     return $src;
 }
 
-function widgets_quienes_Somos() {
+//Modificar el botón de busqueda
+add_filter('get_search_form', 'estilo_busqueda');
+ 
+function estilo_busqueda($text) {
+     $text = str_replace('id="searchsubmit"', 'id="searchsubmit" class="fa fa-input"', $text); 
+     $text = str_replace('value="Buscar"', 'value="&#xf002"', $text); 
+     return $text; 
+}
+
+//Modificar el botón de leer más
+add_filter( 'the_content_more_link', 'modify_read_more_link' );
+
+function modify_read_more_link() {
+    return '<div class="clearfix"></div><a class="more-link btn btn-info" href="' . get_permalink() . '">Leer más</a>';
+}
+
+
+function widgets_portal() {
+
 
     register_sidebar( array(
-        'name'          => 'Quienes Somos',
-        'id'            => 'quienes_somos',
+        'name'          => 'Busqueda Header',
+        'id'            => 'busqueda-header',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ) );    
+
+    register_sidebar( array(
+        'name'          => 'Contenido Destacado',
+        'id'            => 'destacados',
         'before_widget' => '<div>',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="rounded">',
         'after_title'   => '</h2>',
     ) );
 
-}
-add_action( 'widgets_init', 'widgets_quienes_Somos' );
-
-function widget_donde_estamos() {
 
     register_sidebar( array(
         'name'          => 'Donde Estamos',
@@ -45,12 +68,25 @@ function widget_donde_estamos() {
         'after_title'   => '</h2>',
     ) );
 
-}
-add_action( 'widgets_init', 'widget_donde_estamos' );
+    register_sidebar( array(
+        'name'          => 'Quienes Somos Izquierda',
+        'id'            => 'quienes_somos_izq',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="titulo-complementario-izq">',
+        'after_title'   => '</h2>',
+    ) ); 
 
+    register_sidebar( array(
+        'name'          => 'Quienes Somos Derecha',
+        'id'            => 'quienes_somos_der',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="titulo-complementario-der">',
+        'after_title'   => '</h2>',
+    ) );   
 
-function widgets_contactenos() {
-
+    
     register_sidebar( array(
         'name'          => 'Contáctenos',
         'id'            => 'contactenos',
@@ -58,10 +94,10 @@ function widgets_contactenos() {
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="rounded">',
         'after_title'   => '</h2>',
-    ) );
+    ) );     
 
 }
-add_action( 'widgets_init', 'widgets_contactenos' );
+add_action( 'widgets_init', 'widgets_portal' );
 
 
 
@@ -73,7 +109,7 @@ register_nav_menus(array(
 
 if(function_exists( 'add_theme_support' ))
 add_theme_support( 'post-thumbnails' );
-
+set_post_thumbnail_size( 100, 50, true );
 
 function agregar_favicon(){ ?> 
     <!-- Custom Favicons -->
@@ -142,7 +178,7 @@ add_action( 'wp_enqueue_scripts', 'portal_cargar_scripts' );
 
 function portal_cargar_estilos()
 {
-    wp_register_style('estilo-principal',get_template_directory_uri().'/style.css',array(),false,'all');
+    wp_register_style('estilo-principal',get_template_directory_uri().'/style.css',array(),'1.0','all');
     //wp_enqueue_style( $handle, $src, $deps, $ver, $media );
     wp_register_style( 'bootstrap-estilo', get_template_directory_uri() . '/css/bootstrap.css',array(),false,'all');
     wp_register_style( 'bootstrap-tema-estilo', get_template_directory_uri() . '/css/bootstrap-theme.min.css',array(),false,'all');

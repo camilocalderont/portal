@@ -52,15 +52,20 @@
             <!--<a class="navbar-brand" id="enlace-portal" href="<?php //echo get_home_url(); ?>" >
               <img src="<?php //bloginfo('template_url');?>/imagenes/menu/logo-portal-header.png" alt="Portal de Contenidos" />&nbsp;
             </a>-->   
-            <div class="col-md-3 col-lg-3">            
+            <div class="col-md-2 col-lg-2">            
               <a class="navbar-brand" id="enlace-alcaldia" href="http://www.bogota.gov.co/" target="_blank">
                 <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-alcaldia.png" alt="Alcaldía Mayor de Bogotá"/>&nbsp;
               </a>    
             </div>
-            <div class="col-md-8 col-lg-8">
+            <div class="col-md-7 col-lg-7">
             <h1 id='tituloPrincipal'>TALENTO CREA</h1>            
             </div>
-            <div class="social col-md-1 col-lg-1">
+            <div class="social col-xs-12 col-sm-12 col-md-3 col-lg-3"> 
+              <div class="busqueda-general col-xs-12">
+                <?php if ( is_active_sidebar( 'busqueda-header' ) ) : ?>        
+                    <?php dynamic_sidebar( 'busqueda-header' ); ?>        
+                <?php endif; ?>   
+              </div>              
               <a  class="icono" href="https://www.facebook.com/creaidartes/" target="_blank">
                 <img src="<?php bloginfo('template_url');?>/imagenes/menu/sociales-02.png?v=10" alt="Facebook de Crea - Formación y Creación Artística"/>&nbsp;
               </a>  

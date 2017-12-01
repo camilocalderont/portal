@@ -1,4 +1,4 @@
-  <a class="ancla ancla_inicio btn btn-success" href="#inicio">&#9650;</a>
+  <a class="ancla ancla_inicio btn btn-info" href="#inicio">&#9650;</a>
 
   <div class="header-footer"></div>
 

@@ -1,5 +1,5 @@
 <?php
-  global $wpdb;
+  /*global $wpdb;
   $sql="
   SELECT
   C.name AS 'valor', C.term_id AS 'codigo' 'Área' AS 'nombre',  '1' AS 'es_categoria'
@@ -45,6 +45,7 @@
   else
     $hay_plugin_ratings=false;    
 
+*/
   //echo "hay_plugin_ratings: ".$hay_plugin_ratings."</br>";
   //echo "hay_plugin_visitas: ".$hay_plugin_visitas."</br>";
 
@@ -56,12 +57,12 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
       <div class="row">
-        <div class="sf-filter">
+        <!--<div class="sf-filter">-->
           <?php 
           
           //echo '<pre>'.print_r($results).'</pre>';  
           
-          foreach ($campos as $clave => $valor) {
+          /*foreach ($campos as $clave => $valor) {
             if(in_array($clave, $campos_visibles)){
 
               if(sizeof($valor['items'])<=35){              
@@ -107,10 +108,10 @@
               echo "    <option ='P'>Puntaje</option>";
               if($hay_plugin_visitas)
               echo "    <option ='V'>Visitas</option>";            
-              echo "  </select>";
+              echo "  </select>";*/
             
           ?> 
-        </div> 
+        <!--</div> -->
       </div>    
     </div>  
   <?php if(have_posts()): while(have_posts()): the_post(); ?>

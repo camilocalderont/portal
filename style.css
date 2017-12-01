@@ -74,52 +74,208 @@ hr.linea1{
   margin: 20px 0;
 }
 
-.armonico{
-  /*background: #01937C;*/
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e7388b+0,73368b+100 */
-  background: #e7388b; /* Old browsers */
-  background: -moz-linear-gradient(45deg, #e7388b 0%, #73368b 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #e7388b 0%,#73368b 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #e7388b 0%,#73368b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7388b', endColorstr='#73368b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */  
+
+/************* CONTENIDO DESTACADO****************/ 
+
+
+
+
+.contenedor-azul{
+  position: relative;
+  top: 0px;
+}
+.azul{
+   background: url("imagenes/index/pincelada-azul-centro.png") left top repeat-y;
+   background-size: contain; 
+   padding: 2em 0; 
+
+}
+
+.azul-arriba{
+  height: 150px;
+  border-top: 0;
+  margin-bottom: 0 !important;
+  background: url("imagenes/index/pincelada-azul-arriba.png") left bottom no-repeat;  
+  background-size: contain;
+}
+
+.azul-abajo{
+  height: 80px;
+  border-top: 0;
+  margin-top: 0;
+  background: url("imagenes/index/pincelada-azul-abajo.png") left top no-repeat;  
+  background-size: contain;
+}
+
+
+.azul h1, .azul h2,.azul h3,
+.azul h4,.azul h5,.azul h6,.azul .titulo,
+.azul p{
   color: #ffffff !important;
 }
-.armonico h1,.armonico h2,.armonico h3,.armonico h4,.armonico h5,.armonico h6, .armonico .titulo{
+
+
+.verdeazul{
+   background: url("imagenes/index/pincelada-verdeazul-centro.png") left top repeat-y;
+   background-size: contain; 
+   padding-bottom: 2em; 
+   position: relative;
+
+}
+
+.verdeazul-arriba{
+  height: 150px;
+  border-top: 0;
+  margin-bottom: 0 !important;  
+  background: url("imagenes/index/pincelada-verdeazul-arriba.png") left bottom no-repeat;  
+  background-size: contain;
+}
+
+.verdeazul-abajo{
+  height: 126px; 
+  border-top: 0;
+  margin-top: 0;  
+  background: url("imagenes/index/pincelada-verdeazul-abajo.png") left top no-repeat;  
+  background-size: contain;
+}
+
+.triangulo-verdeazul-izquierda{
+  position: absolute;
+  z-index: 3;
+  left: 30px;
+  top: 100px;
+  width: 119px;
+  height: 128px;
+  background:  url("imagenes/index/triangulo2izquierda.png") center top no-repeat;
+  background-size: cover;
+}
+
+
+
+.amarillo{
+   background: url("imagenes/index/pincelada-amarillo-centro.png") left top repeat-y;
+   background-size: contain; 
+   padding-bottom: 2em; 
+
+}
+
+.amarillo-arriba{
+  height: 150px;
+  border-top: 0;
+  margin-bottom: 0 !important;  
+  background: url("imagenes/index/pincelada-amarillo-arriba.png") left bottom no-repeat;  
+  background-size: contain;
+}
+
+.amarillo-abajo{
+  height: 75px;
+  border-top: 0;
+  margin-top: 0;
+  background: url("imagenes/index/pincelada-amarillo-abajo.png") left top no-repeat;  
+  background-size: contain;
+}
+
+
+
+.amarillo h1,.amarillo h2,.amarillo h3,.amarillo h4,.amarillo h5,.amarillo h6, .amarillo .titulo,
+.amarillo p{
   color: #ffffff !important;
 } 
- 
 
+
+
+.morado{
+   background: url("imagenes/index/pincelada-morado-centro.png") left top repeat-y;
+   background-size: contain; 
+   padding: 2em 0; 
+   position: relative;
+
+}
+ 
+.morado-arriba{
+  height: 150px;
+  border-top: 0;
+  margin-bottom: 0 !important;
+  background: url("imagenes/index/pincelada-morado-arriba.png") left bottom no-repeat;  
+  background-size: contain;
+}
+
+.morado-abajo{
+  height: 85px;
+  border-top: 0;
+  margin-top: 0;
+  background: url("imagenes/index/pincelada-morado-abajo.png") left top no-repeat;  
+  background-size: contain;
+}
+
+.morado h1, .morado h2,.morado h3,
+.morado h4,.morado h5,.morado h6,.morado .titulo,
+.morado p{
+  color: #ffffff !important;
+} 
+
+.triangulo-morado-derecha{
+  position: absolute;
+  z-index: 3;
+  right: 30px;  
+  top: 100px;
+  width: 73px;
+  height: 107px;
+  background:  url("imagenes/index/triangulo1derecha.png") center top no-repeat;
+  background-size: cover;
+}
+
+
+
+.textwidget{
+  margin-bottom: 4em;
+}
+
+
+
+
+/************** DESTACADOS *******************/
+
+
+.mega-post-carousel1, .mega-post-carousel4 {
+    box-shadow: 1px 1px 12px 2px rgba(0, 0, 0, 0.3) !important;
+    background: #ffffff !important;
+} 
+
+.mega-post-para p{
+  color: #888 !important;
+}
+
+.mega-post-carousel4{
+  height: 400px !important;
+}
+
+.readmorebtn:hover, .readmorebtn:focus{
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;  
+  background-position: 0 -15px;
+}
 
 .complementario{
   background: #ffc000;
   color: #ffffff !important;
 }
 
-.alternativo{
-  /*background: #ffc000;*/
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#60b56e+0,00abe6+100 */
-  background: #60b56e; /* Old browsers */
-  background: -moz-linear-gradient(45deg, #60b56e 0%, #00abe6 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #60b56e 0%,#00abe6 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #60b56e 0%,#00abe6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#60b56e', endColorstr='#00abe6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */   
-  /*background: #F5A71E;*/
-  color: #ffffff !important;
-}
+
 
 .complementario h1,.complementario h2,.complementario h3,.complementario h4,
 .complementario h5,.complementario h6, .complementario .titulo,
 .tituloCategoria h2,
 footer h1, footer h2,footer h3, footer h4, footer h5, footer h6,
-.alternativo h1, .alternativo h2,.alternativo h3, .alternativo h4, .alternativo h5, .alternativo h6 {
+.verdeazul h1, .verdeazul h2,.verdeazul h3, .verdeazul h4, .verdeazul h5, .verdeazul h6 {
   color: #ffffff !important;
 } 
-
+ 
 .titulo-otro{
   background: #18BA90;
 }
 
-.titulo-complementario-izq{
+.titulo-complementario-izq, .complementario-izq .widget-title{
   background: /*#F5A71E; */ #005078;
   padding: 0.5em 0 0.5em 20px;
   position: relative;
@@ -127,7 +283,7 @@ footer h1, footer h2,footer h3, footer h4, footer h5, footer h6,
   width: 105%;
 }
 
-.titulo-complementario-der{
+.titulo-complementario-der, .complementario-der .widget-title{
   text-align: right;
   background: /*#F5A71E; */ #005078;
   padding: 0.5em 20px 0.5em 0;
@@ -137,21 +293,6 @@ footer h1, footer h2,footer h3, footer h4, footer h5, footer h6,
 }
 
 
-.amarillo-arriba{
-  height: 127px;
-  border-top: 0;
-  margin-bottom: 0; 
-  background: url("imagenes/seccion-amarilla-arriba.png") left top no-repeat;  
-  background-size: cover;
-}
-
-.amarillo-abajo{
-  height: 56px;
-  border-top: 0;
-  margin-top: 0;
-  background: url("imagenes/seccion-amarilla-abajo.png") left top no-repeat;  
-  background-size: cover;
-}
 
 /*********** Menu y Header *************/
 
@@ -164,6 +305,7 @@ footer h1, footer h2,footer h3, footer h4, footer h5, footer h6,
   display: flex;
   height: 90px;
   transition: 0.5s;
+  width: 100%;
 }
 .social .icono{
   margin: auto 5px;
@@ -1231,4 +1373,67 @@ textarea.ninja-forms-field, .comment-form-comment textarea, .form-submit input, 
 
 .footer-color{
   background-color: #005078 !important;
+}
+
+
+
+/********************** SEARCH***************************/
+
+#searchform input[type="text"]{
+    display: block;
+    width: 100%;
+    height: 35px; 
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+#searchform{  
+  position: relative;
+  margin-top: 20px;
+}
+#searchsubmit{
+  height: 35px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;  
+}
+label.screen-reader-text{
+  display: none;
+}
+.contenidoBusqueda{
+  max-height: 550px;
+}
+.thumb-search{
+  height: 220px;
+  text-align: center;
+  overflow: hidden;
+}
+.fluid-width-video-wrapper iframe, .featured-video-plus iframe{
+  width: 300px !important;
+  height: 220px !important;
+  position: initial !important;
+}
+.fluid-width-video-wrapper{
+  padding-top: 0 !important;
+}
+.contenido-search, .contenido-search p{
+  text-align: center;
+} 
+.post-categories li{
+  list-style: none;
 }

@@ -61,49 +61,76 @@ en acción teatral.</span>
       </div>
 
       <div id="nav" class="noselect">
-        <button class="btn btn-success left">
+        <button class="btn btn-info left">
          &#9668;
         </button>
-        <button class="btn btn-success right">
+        <button class="btn btn-info right">
          &#9658;
         </button> 
       </div>    
     </div>                   
-  </div>      
-  <hr>
-  <div class="armonico row">
-    <span class="ancla" id="portal"></span><br><br>
-    <div class=" col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
-      <?php if ( is_active_sidebar( 'quienes_somos' ) ) : ?>        
-          <?php dynamic_sidebar( 'quienes_somos' ); ?>        
-      <?php endif; ?>   
+  </div>   
+  <section class="contenedor-azul">
+    <hr class="azul-arriba">
+    <div class="azul row">
+      <div class=" col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
+        <?php if ( is_active_sidebar( 'destacados' ) ) : ?>        
+            <?php dynamic_sidebar( 'destacados' ); ?>        
+        <?php endif; ?>   
+      </div>
     </div>
-  </div>
-  <hr>
-  <div class="alternativo row">
-    <span class="ancla" id="nuestrosCrea"></span><br><br>
-    <div class="  col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
-      <h2 class="titulo">Encuentre su CREA más cercano</h2>
-      <?php if ( is_active_sidebar( 'donde_estamos' ) ) : ?>
-        <div id="donde-estamos">
-          <?php dynamic_sidebar( 'donde_estamos' ); ?>
-        </div>
-      <?php endif; ?>         
-    </div> 
-  </div>
-  <hr>
-  <hr class="amarillo-arriba">
-  <div class="complementario row">
-    <span class="ancla" id="contactenos"></span><br><br><br><br>
-    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
-      <h2  class="titulo">Contáctanos</h2>
-      <?php if ( is_active_sidebar( 'contactenos' ) ) : ?>
-        <div id="contactenos">
-          <?php dynamic_sidebar( 'contactenos' ); ?>
-        </div>
-      <?php endif; ?>   
+    <hr class="azul-abajo">
+  </section>
+  <section class="contenedor-morado">  
+    <hr class="morado-arriba">
+    <div class="morado row">
+      <!--<div class="triangulo-morado-derecha"></div>-->
+      <span class="ancla" id="portal"></span><br><br>
+      <div class=" col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
+        <div class="complementario-izq col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <?php if ( is_active_sidebar( 'quienes_somos_izq' ) ) : ?>        
+            <?php dynamic_sidebar( 'quienes_somos_izq' ); ?>        
+        <?php endif; ?>  
+        </div> 
+        <div class="complementario-der col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <?php if ( is_active_sidebar( 'quienes_somos_der' ) ) : ?>        
+            <?php dynamic_sidebar( 'quienes_somos_der' ); ?>        
+        <?php endif; ?>  
+        </div>       
+      </div>
     </div>
-  </div>
-  <hr class="amarillo-abajo">
+    <hr class="morado-abajo">
+  </section>
+  <section class="contenedor-verdeazul">
+    <hr class="verdeazul-arriba">
+    <div class="verdeazul row">  
+      <!--<div class="triangulo-verdeazul-izquierda"></div>--> 
+      <span class="ancla" id="nuestrosCrea"></span><br><br>
+      <div class="  col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
+        <h2 class="titulo">Encuentre su CREA más cercano</h2>
+        <?php if ( is_active_sidebar( 'donde_estamos' ) ) : ?>
+          <div id="donde-estamos">
+            <?php dynamic_sidebar( 'donde_estamos' ); ?>
+          </div>
+        <?php endif; ?>         
+      </div> 
+    </div>
+    <hr class="verdeazul-abajo"> 
+  </section>
+  <section class="contenedor-amarillo">
+    <hr class="amarillo-arriba">
+    <div class="amarillo row">
+      <span class="ancla" id="contactenos"></span><br><br><br><br>
+      <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 ">
+        <h2  class="titulo">Contáctanos</h2>
+        <?php if ( is_active_sidebar( 'contactenos' ) ) : ?>
+          <div id="contactenos">
+            <?php dynamic_sidebar( 'contactenos' ); ?>
+          </div>
+        <?php endif; ?>   
+      </div>
+    </div>
+    <hr class="amarillo-abajo">
+  </section>
 <?php //get_sidebar(); ?>
 <?php get_footer(); ?>

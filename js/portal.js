@@ -1,5 +1,7 @@
 jQuery(document).ready(function($){
 
+	$('#showcase').css('opacity',0);
+
  	$('[data-toggle="tooltip"]').tooltip();   
 	//Header con Scroll 
  
@@ -281,6 +283,7 @@ jQuery(document).ready(function($){
 		} );
 
 		function rendered( carousel ) {
+			$('#showcase').css('opacity',1);
 			title.text( carousel.nearestItem().element.alt )
 			// Fade in based on proximity of the item
 			var c = Math.cos((carousel.floatIndex() % 1) * 2 * Math.PI)
