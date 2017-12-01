@@ -161,7 +161,7 @@ function portal_cargar_scripts()
     wp_register_script( 'jquery-scrollto', get_template_directory_uri() . '/js/jquery.scrollTo.js',array('jquery'),false,false);
     wp_register_script( 'jquery-scrolltofixed', get_template_directory_uri() . '/js/jquery-scrolltofixed-min.js',array('jquery'),false,false);  
     wp_register_script( 'portal', get_template_directory_uri() . '/js/portal.js',array('jquery'),false,false);
-    wp_register_script( 'busqueda', get_template_directory_uri() . '/js/busqueda.js',array('jquery'),false,false);
+    wp_register_script( 'busqueda', get_template_directory_uri() . '/js/busqueda.js',array('jquery'),'1.35',false);
     wp_register_script( 'ie-emulation', get_template_directory_uri() . '/js/ie-emulation-modes-warning.js',array(),false,false);
     wp_enqueue_script( 'no-conflict' );   
     wp_enqueue_script( 'bootstrap-script' );   
@@ -238,7 +238,7 @@ add_action('wp_ajax_nopriv_busqueda', 'busqueda');
 
 function busqueda(){
     $datos=$_POST['campos'];
-    echo print_r($_POST,true);
+    //echo print_r($_POST,true);
     $selectOrderBy="";
     $orderBy="";
     $where="";
@@ -260,9 +260,9 @@ function busqueda(){
             }
             else{
                 if($having=="")
-                    $having=" HAVING SUM(FIND_IN_SET(PM.meta_key,'".$campo['campo']."')) > 0  AND SUM(PM.meta_value=".$campo['valor'].") > 0  ";  
+                    $having=" HAVING SUM(FIND_IN_SET(PM.meta_key,'".$campo['campo']."')) > 0  AND SUM(PM.meta_value='".$campo['valor']."') > 0  ";  
                 else 
-                    $having=" AND SUM(FIND_IN_SET(PM.meta_key,'".$campo['campo']."')) > 0 AND SUM(PM.meta_value=".$campo['valor'].") > 0  ";  
+                    $having=" AND SUM(FIND_IN_SET(PM.meta_key,'".$campo['campo']."')) > 0 AND SUM(PM.meta_value='".$campo['valor']."') > 0  ";   
             }
         } 
     }
@@ -273,9 +273,25 @@ function busqueda(){
             JOIN portal_term_relationships AS TR ON TR.object_id=P.ID
             WHERE P.post_type='post' ".$where."
             GROUP BY P.ID ".$having." ".$orderBy.";";
-    echo $sql;            
-    //$posts= $wpdb->get_results( $sql, OBJECT );    
-    //echo print_r($_POST,true);
+    //echo $sql;            
+    $contenidos= $wpdb->get_results( $sql, OBJECT ); 
+    $html = "<div class='sf-result-head'><span class='sf-foundcount'>".sizeof($contenidos)." Resultados</span> de <span class='sf-totalcount'>XXX contenidos<span></div>";
+    $html.= "<ul class='sf-result'>";
+    foreach ($contenidos as $contenido) {
+        $html.= "<li class='col-xs-12 col-sm-6 col-md-3 col-lg-3'>";
+        $html.= "<a href='".get_permalink($contenido->ID)."'>";
+        $html.= "   <h3>".get_the_title($contenido->ID)."</h3>"; 
+        $html.= "   <div style='float:left; width: 100%' class='text-center'>";
+                        get_the_post_thumbnail($contenido->ID,'medium_large',array('class' => "thumbnail-100"));
+        $html.= "   </div>";
+        $html.= "   <p><small>".get_the_date( 'D M j',$contenido->ID)."</small><br>". get_the_excerpt($contenido->ID)."</p>";
+        $html.= "</a>";
+        $html.= "</li>";
+    }
+    $html.= "</ul>";
+    echo $html;
+    //echo json_encode(value)   ;
+    //echo print_r($contenidos,true);
 }
 
 ?>

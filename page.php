@@ -1,8 +1,8 @@
 <?php
-  /*global $wpdb;
+  global $wpdb;
   $sql="
   SELECT
-  C.name AS 'valor', C.term_id AS 'codigo' 'Área' AS 'nombre',  '1' AS 'es_categoria'
+  C.name AS 'valor', C.term_id AS 'codigo', 'Área' AS 'nombre',  '1' AS 'es_categoria'
   FROM ".$wpdb->prefix."term_taxonomy AS CT
   JOIN ".$wpdb->prefix."terms AS C ON C.term_id=CT.term_id
   WHERE CT.taxonomy='category' AND CT.count>0 
@@ -28,7 +28,7 @@
   $campos_visibles = array('Estudiante(s)','Crea','Área');
   foreach ($results as $clave => $valor) {
     //$campos[$valor->nombre]= array('items'=>array(),'es_categoria'=>$valor->es_categoria);
-    $campos[$valor->nombre]['items'][]=$valor->valor;
+    $campos[$valor->nombre]['items'][]= array('codigo'=>$valor->codigo,'valor'=>$valor->valor);
     $campos[$valor->nombre]['es_categoria']=$valor->es_categoria;
   }
       
@@ -45,7 +45,7 @@
   else
     $hay_plugin_ratings=false;    
 
-*/
+
   //echo "hay_plugin_ratings: ".$hay_plugin_ratings."</br>";
   //echo "hay_plugin_visitas: ".$hay_plugin_visitas."</br>";
 
@@ -57,12 +57,12 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
       <div class="row">
-        <!--<div class="sf-filter">-->
+        <div class="sf-filter">
           <?php 
           
           //echo '<pre>'.print_r($results).'</pre>';  
           
-          /*foreach ($campos as $clave => $valor) {
+          foreach ($campos as $clave => $valor) {
             if(in_array($clave, $campos_visibles)){
 
               if(sizeof($valor['items'])<=35){              
@@ -72,7 +72,10 @@
                 echo "  <select data-busqueda='".$clave."' data-categoria='".$valor["es_categoria"]."' class='campo-busqueda'>"; 
                 echo "    <option ='Todos'>Todos</option>";
                 foreach ($valor["items"] as $key => $value) {
-                  echo "    <option ='".$value."'>".$value."</option>";
+                  if($valor["es_categoria"]==1)
+                    echo "    <option value='".$value['codigo']."'>".$value['valor']."</option>";
+                  else
+                    echo "    <option value='".$value['valor']."'>".$value['valor']."</option>";
                 }
                 echo "  </select>";
                 echo "</fieldset>";
@@ -108,10 +111,12 @@
               echo "    <option ='P'>Puntaje</option>";
               if($hay_plugin_visitas)
               echo "    <option ='V'>Visitas</option>";            
-              echo "  </select>";*/
+              echo "  </select>";
             
           ?> 
-        <!--</div> -->
+        </div> 
+        <div id="resultado-busqueda" class="sf-result">
+        </div>
       </div>    
     </div>  
   <?php if(have_posts()): while(have_posts()): the_post(); ?>

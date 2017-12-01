@@ -10,12 +10,20 @@ jQuery(document).ready(function($){
 		$(".campo-busqueda").each(function(){
 			var campo=$(this).data("busqueda");
 			var categoria= $(this).data("categoria"); 
-			var valor=$(this).val();	
+			var valor=$(this).val();	 
+			/*if($(this).is('select')){
+				console.log('es select');
+				var valor=$(this).find(":selected").val();	 
+			}
+			else{
+				console.log('no es select'); 
+				var valor=$(this).val();	
+			}*/
 			//console.log('campo: '+campo+ ' - valor: '+valor);
 
 
 			if(valor!="Todos" && valor!=""){
-				console.log('campo: '+campo+ ' - valor: '+valor+' - categoria: '+categoria);
+				//console.log('campo: '+campo+ ' - valor: '+valor+' - categoria: '+categoria);
 				//datos[campo] = valor;
 
 		        item = {}
@@ -26,10 +34,11 @@ jQuery(document).ready(function($){
 			}
 		});
 
-		console.log('jsonObj: '+jsonObj); 
+		//console.log('jsonObj: '+jsonObj); 
 
 		$.post(ajaxurl, { action: 'busqueda', campos: jsonObj }, function(output) {
 		     console.log(output);
+		     $("#resultado-busqueda").html(output); 
 		     jsonObj = [];
 		 });	 	
 
