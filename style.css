@@ -1422,13 +1422,13 @@ label.screen-reader-text{
   height: 220px;
   text-align: center;
   overflow: hidden;
-}
-.fluid-width-video-wrapper iframe, .featured-video-plus iframe{
+} 
+.thumb-search .fluid-width-video-wrapper iframe, .thumb-search .featured-video-plus iframe{
   width: 300px !important;
   height: 220px !important;
   position: initial !important;
 }
-.fluid-width-video-wrapper{
+.thumb-search .fluid-width-video-wrapper{
   padding-top: 0 !important;
 }
 .contenido-search, .contenido-search p{

@@ -178,7 +178,7 @@ add_action( 'wp_enqueue_scripts', 'portal_cargar_scripts' );
 
 function portal_cargar_estilos()
 {
-    wp_register_style('estilo-principal',get_template_directory_uri().'/style.css',array(),'1.0','all');
+    wp_register_style('estilo-principal',get_template_directory_uri().'/style.css',array(),'1.20','all');
     //wp_enqueue_style( $handle, $src, $deps, $ver, $media );
     wp_register_style( 'bootstrap-estilo', get_template_directory_uri() . '/css/bootstrap.css',array(),false,'all');
     wp_register_style( 'bootstrap-tema-estilo', get_template_directory_uri() . '/css/bootstrap-theme.min.css',array(),false,'all');

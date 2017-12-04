@@ -26,7 +26,7 @@
 	<h2>No se encontro el Post</h2>
 	<?php endif; ?>
 
-	<div class="clearfix"></div>
+	<div class="clearfix"></div> 
 	<!--<aside class="row complementario">
 		<div class="container"> 
 		<h3>Contenido Relacionado</h3>
