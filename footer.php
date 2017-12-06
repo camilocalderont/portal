@@ -76,13 +76,16 @@
     <div class="row footer-color">
       <div class="container">
         <div class="col-md-3 col-xs-6 col-sm-6"></div>
-        <div class="col-md-3 col-xs-6 col-sm-6"></div>
-        <div class="col-md-6 col-xs-12 col-sm-12">
+        <div class="col-md-9 col-xs-12 col-sm-12">
             <p>
+
               <a href="http://idartes.gov.co/" target="_blank" title="Idartes" id="enlace-alcaldia-footer"><img alt="" src="<?php bloginfo('template_url');?>/imagenes/menu/logo-alcaldia-header.png"></a>    
               <a class="navbar-brand" id="enlace-crea" href="http://www.crea.gov.co/" target="_blank">
                 <img src="<?php bloginfo('template_url');?>/imagenes/menu/logo-crea-header.png" alt="Crea - Formación y Creación Artística"/>&nbsp;
-              </a>           
+              </a>       
+              <a class="navbar-brand" id="enlace-nidos" href="http://www.nidos.gov.co/" target="_blank">
+                <img src="<?php bloginfo('template_url');?>/imagenes/nidosblancofinal191x90.png" alt="Nidos"/>&nbsp;
+              </a>                      
           </p>          
         </div>
       </div>
@@ -110,6 +113,14 @@
 
 
 
-  </body>
-
+  </body>  
+  <div class="modal fade" id="modal_enviando" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="<?php bloginfo('template_url');?>/imagenes/enviando.gif" width="100%">      
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 </html>

@@ -1179,6 +1179,24 @@ ul.sf-result > li p{
 ul.sf-nav > li > .sf-nav-current, ul.sf-nav > li > .sf-nav-click, ul.sf-nav > li > .sf-nav-three-points{
   width: 30px;
 }
+
+
+
+.page-numbers {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 2px 0 0;
+  border: 1px solid #eee;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 2px;
+  font-weight: 600;
+}
+.page-numbers.current,
+a.page-numbers:hover {
+  background: #f9f9f9;
+}
+
 /**************** Pie de Página *******************/
 .ancla_inicio{
       text-decoration: none;
@@ -1242,7 +1260,7 @@ footer h2.block-title {
   transition: .5s;
 }
 
-#enlace-crea, #enlace-alcaldia-footer{
+#enlace-crea, #enlace-alcaldia-footer, #enlace-nidos{
   float: right;
 }
 

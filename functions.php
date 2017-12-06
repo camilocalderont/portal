@@ -161,7 +161,7 @@ function portal_cargar_scripts()
     wp_register_script( 'jquery-scrollto', get_template_directory_uri() . '/js/jquery.scrollTo.js',array('jquery'),false,false);
     wp_register_script( 'jquery-scrolltofixed', get_template_directory_uri() . '/js/jquery-scrolltofixed-min.js',array('jquery'),false,false);  
     wp_register_script( 'portal', get_template_directory_uri() . '/js/portal.js',array('jquery'),false,false);
-    wp_register_script( 'busqueda', get_template_directory_uri() . '/js/busqueda.js',array('jquery'),'1.35',false);
+    wp_register_script( 'busqueda', get_template_directory_uri() . '/js/busqueda.js',array('jquery'),'11',false); 
     wp_register_script( 'ie-emulation', get_template_directory_uri() . '/js/ie-emulation-modes-warning.js',array(),false,false);
     wp_enqueue_script( 'no-conflict' );   
     wp_enqueue_script( 'bootstrap-script' );   
@@ -178,7 +178,7 @@ add_action( 'wp_enqueue_scripts', 'portal_cargar_scripts' );
 
 function portal_cargar_estilos()
 {
-    wp_register_style('estilo-principal',get_template_directory_uri().'/style.css',array(),'1.20','all');
+    wp_register_style('estilo-principal',get_template_directory_uri().'/style.css',array(),'3','all');
     //wp_enqueue_style( $handle, $src, $deps, $ver, $media );
     wp_register_style( 'bootstrap-estilo', get_template_directory_uri() . '/css/bootstrap.css',array(),false,'all');
     wp_register_style( 'bootstrap-tema-estilo', get_template_directory_uri() . '/css/bootstrap-theme.min.css',array(),false,'all');
@@ -237,6 +237,12 @@ add_action('wp_ajax_busqueda', 'busqueda');
 add_action('wp_ajax_nopriv_busqueda', 'busqueda');
 
 function busqueda(){
+    
+    //$total_posts=0;
+    $posts = new WP_Query(array ('post_type'=> 'post','post_status'=>'publish'));  
+    $total_posts =$posts->found_posts;
+    
+
     $datos=$_POST['campos'];
     //echo print_r($_POST,true);
     $selectOrderBy="";
@@ -266,32 +272,50 @@ function busqueda(){
             }
         } 
     }
-
+    $items_per_page = 9;
+    $page = isset( $_POST['pagina'] ) ? abs( (int) $_POST['pagina'] ) : 1;  
     $sql="  SELECT P.* ".$selectOrderBy."
             FROM portal_posts AS P
             JOIN portal_postmeta AS PM ON PM.post_id=P.ID
             JOIN portal_term_relationships AS TR ON TR.object_id=P.ID
             WHERE P.post_type='post' ".$where."
-            GROUP BY P.ID ".$having." ".$orderBy.";";
+            GROUP BY P.ID ".$having." ".$orderBy; 
     //echo $sql;            
+    $sqlTotal=" SELECT COUNT(1) as total FROM (".$sql.") AS t;";
+    $sql.=" LIMIT ".($page-1)*$items_per_page.",".$items_per_page." ;";
     $contenidos= $wpdb->get_results( $sql, OBJECT ); 
-    $html = "<div class='sf-result-head'><span class='sf-foundcount'>".sizeof($contenidos)." Resultados</span> de <span class='sf-totalcount'>XXX contenidos<span></div>";
+    $totalContenidos=$wpdb->get_results( $sqlTotal, OBJECT );  
+    //$count_posts =sizeof($contenidos);
+    //echo print_r( $totalContenidos,true);
+     $totalContenidos=$totalContenidos[0]->total;
+    
+    $html = "<div class='sf-result-head'><span class='sf-foundcount'>".$totalContenidos." Resultados</span> de <span class='sf-totalcount'>".$total_posts." contenidos<span></div>";
     $html.= "<ul class='sf-result'>";
     foreach ($contenidos as $contenido) {
         $html.= "<li class='col-xs-12 col-sm-6 col-md-3 col-lg-3'>";
         $html.= "<a href='".get_permalink($contenido->ID)."'>";
         $html.= "   <h3>".get_the_title($contenido->ID)."</h3>"; 
         $html.= "   <div style='float:left; width: 100%' class='text-center'>";
-                        get_the_post_thumbnail($contenido->ID,'medium_large',array('class' => "thumbnail-100"));
+        $html.=            get_the_post_thumbnail($contenido->ID,array('class' => "thumbnail-search"));
         $html.= "   </div>";
         $html.= "   <p><small>".get_the_date( 'D M j',$contenido->ID)."</small><br>". get_the_excerpt($contenido->ID)."</p>";
         $html.= "</a>";
         $html.= "</li>";
     }
-    $html.= "</ul>";
-    echo $html;
-    //echo json_encode(value)   ;
-    //echo print_r($contenidos,true);
+    //$html.= get_the_posts_pagination();       
+    $html.= "</ul>";      
+    echo $html; 
+    echo '<div class="pagination">';
+    echo paginate_links( array(
+            'base' => add_query_arg( 'pagina', '%#%' ),
+            'format' => '', 
+            'prev_text' => __('&laquo;'),
+            'next_text' => __('&raquo;'),
+            'total' => ceil($totalContenidos / $items_per_page),  
+            'current' => $page
+        ));  
+    echo '</div>';
+    wp_die();
 }
 
 ?>
